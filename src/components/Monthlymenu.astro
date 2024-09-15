@@ -154,26 +154,36 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Obtener el día del mes actual
     const currentDay = new Date().getDate();
     const dayCardId = `dayCard-${currentDay}`;
-
-    // Seleccionar el slider y la dayCard correspondiente
-    const slider = document.getElementById("mobile-slider");
     const dayCard = document.getElementById(dayCardId);
+    const slider = document.getElementById("mobile-slider");
 
-    if (slider && dayCard) {
-      // Calcular la posición de scroll para centrar el dayCard en el slider
-      const sliderWidth = slider.clientWidth;
-      const cardWidth = dayCard.offsetWidth;
-      const cardOffset = dayCard.offsetLeft;
-      const scrollPosition = cardOffset - sliderWidth / 2 + cardWidth / 2;
+    if (dayCard && slider) {
+      // Usar IntersectionObserver para detectar cuando el slider entra en la vista
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Calcular la posición de scroll para centrar el dayCard en el slider
+            const sliderWidth = slider.clientWidth;
+            const cardWidth = dayCard.offsetWidth;
+            const cardOffset = dayCard.offsetLeft;
+            const scrollPosition = cardOffset - sliderWidth / 2 + cardWidth / 2;
 
-      // Realizar el scroll suave
-      slider.scrollTo({ left: scrollPosition, behavior: "smooth" });
+            // Realizar el scroll suave
+            slider.scrollTo({ left: scrollPosition, behavior: "smooth" });
 
-      // Aplicar clase para escala (opcional)
-      dayCard.classList.add("scale-105");
+            // Aplicar clase para escala (opcional)
+            dayCard.classList.add("scale-105");
+
+            // Dejar de observar una vez que se ha realizado el scroll
+            observer.unobserve(slider);
+          }
+        });
+      });
+
+      // Comenzar a observar el slider
+      observer.observe(slider);
     } else {
       console.error("El slider o la tarjeta del día actual no se encontraron.");
     }
