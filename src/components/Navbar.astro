@@ -1,0 +1,78 @@
+---
+const navButton =
+  "px-4 py-2 rounded-xl hover:bg-rojo hover:text-blanco transition-all duration-300 ease-in-out";
+---
+
+<nav
+  class="md:w-3/4 mx-auto px-4 py-2 md:p-4 flex justify-between items-center fixed top-0 left-0 right-0 rounded-b-2xl bg-salmon shadow-lg md:shadow-none z-50"
+>
+  <!-- Logo -->
+  <a href="#" id="logo-link" aria-label="Volver al inicio">
+    <div class="w-24 md:w-32">
+      <img src="/img/logo_camarena.svg" alt="Logo Camarena" />
+    </div>
+  </a>
+  <!-- Hamburger Menu Icon -->
+  <div id="hamburger" class="block md:hidden cursor-pointer">
+    <div class="w-6 h-1 bg-negro mb-1 rounded-full"></div>
+    <div class="w-6 h-1 bg-negro mb-1 rounded-full"></div>
+    <div class="w-6 h-1 bg-negro rounded-full"></div>
+  </div>
+  <!-- Navigation Links -->
+  <ul id="nav-links" class="hidden md:flex gap-4 text-negro font-bold">
+    <li><a href="#about" class={navButton}>Sobre nosotros</a></li>
+    <li><a href="#menu" class={navButton}>Menú diario</a></li>
+    <li><a href="#timetable" class={navButton}>Horario</a></li>
+    <li><a href="#contact" class={navButton}>Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- Mobile Navigation Links -->
+<ul
+  id="mobile-menu"
+  class="fixed top-16 left-0 w-full flex-col space-y-4 text-negro md:hidden text-center py-5 bg-gradient-to-b from-salmon to-salmon-dark rounded-xl menu-slide-in hidden"
+>
+  <li><a href="#about" class="hover:text-gray-900">Sobre nosotros</a></li>
+  <li><a href="#menu" class="hover:text-gray-900">Menú diario</a></li>
+  <li><a href="#timetable" class="hover:text-gray-900">Horario</a></li>
+  <li><a href="#contact" class="hover:text-gray-900">Contacto</a></li>
+</ul>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("menu-slide-in");
+  });
+
+  document.getElementById("logo-link").addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<style>
+  /* Mobile menu Animation */
+  .menu-slide-in {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition:
+      transform 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
+  }
+
+  .menu-slide-in.hidden {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  .menu-slide-in:not(.hidden) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
