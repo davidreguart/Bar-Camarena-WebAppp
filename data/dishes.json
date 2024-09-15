@@ -6,34 +6,34 @@
     "-"
   ],
   "2": [
-    "Sándwich de pavo",
-    "Pasta al pesto",
-    "Pizza margarita",
-    "Gelato de fresa"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "3": [
-    "Hamburguesa con queso",
-    "Ensalada griega",
-    "Paella de mariscos",
-    "Tarta de manzana"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "4": [
-    "Sopa de calabaza",
-    "Burritos de pollo",
-    "Canelones de espinacas",
-    "Cheesecake de frutas"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "5": [
-    "Tortilla española",
-    "Ensalada de atún",
-    "Ratatouille",
-    "Crema catalana"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "6": [
-    "Croquetas de jamón",
-    "Arroz con pollo",
-    "Espaguetis a la carbonara",
-    "Mousse de chocolate"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "7": [
     "Abierto",
@@ -48,34 +48,34 @@
     "-"
   ],
   "9": [
-    "Pechuga de pollo a la parrilla",
-    "Sopa de tomate",
-    "Pizza de pepperoni",
-    "Tarta de limón"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "10": [
-    "Empanadas de carne",
-    "Ensalada de quinoa",
-    "Sushi",
-    "Panna cotta"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "11": [
-    "Sopa de miso",
-    "Tacos de cerdo",
-    "Pasta con champiñones",
-    "Flan de huevo"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "12": [
-    "Ensalada de garbanzos",
-    "Pizza vegetariana",
-    "Pollo al curry",
-    "Mousse de mango"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "13": [
-    "Sopa de mariscos",
-    "Hamburguesa vegetariana",
-    "Canelones de carne",
-    "Tarta de queso"
+    "Abierto",
+    "solo",
+    "para",
+    "almuerzos"
   ],
   "14": [
     "Abierto",
@@ -90,34 +90,34 @@
     "-"
   ],
   "16": [
-    "Sopa de pollo",
-    "Tacos de ternera",
-    "Pizza de cuatro quesos",
-    "Pudding de vainilla"
+    "Fideua",
+    "Arroz a la cubana",
+    "Tortilla con gamba",
+    "Pechuga de pollo"
   ],
   "17": [
-    "Ensalada de aguacate",
-    "Pasta al pesto con camarones",
-    "Pollo a la parrilla",
-    "Tarta de frutas"
+    "Arroz al horno",
+    "Patatas con bacalao",
+    "Ensalada de ahumados",
+    "Caballa"
   ],
   "18": [
-    "Sopa de zanahoria",
-    "Enchiladas",
-    "Sushi de atún",
-    "Tiramisu"
+    "Arroz negro",
+    "Macarrones",
+    "Dorada",
+    "Hamburguesa"
   ],
   "19": [
-    "Croquetas de queso",
-    "Arroz con mariscos",
-    "Pizza con aceitunas",
-    "Tarta de chocolate y nueces"
+    "Arroz meloso con gamba",
+    "Ensalada de pasta",
+    "Chipirones a la plancha",
+    "Sandwhich vegetal"
   ],
   "20": [
-    "Ensalada de tomate y mozzarella",
-    "Pasta con salsa de tomate",
-    "Burritos de carne",
-    "Helado de chocolate"
+    "Paella valenciana",
+    "Ensaladilla de sepoa",
+    "Huevos rotos",
+    "Pataqueta"
   ],
   "21": [
     "Abierto",
@@ -132,34 +132,34 @@
     "-"
   ],
   "23": [
-    "Sopa de cebolla",
-    "Hamburguesa con bacon",
-    "Lasaña de carne y verduras",
-    "Panna cotta con frutas"
+    "Hervido",
+    "Arroz a banda",
+    "Alitas de pollo",
+    "Lomo con tomate y longaniza"
   ],
   "24": [
-    "Crema de patatas",
-    "Tacos de carne",
-    "Pizza de champiñones",
-    "Mousse de frutas del bosque"
+    "Lentejas",
+    "Spaguettis",
+    "Tortilla al gusto",
+    "Bacalao frito"
   ],
   "25": [
-    "Ensalada de espinacas y fresas",
-    "Sopa de pollo con fideos",
-    "Pasta al estilo carbonara",
-    "Helado de mango"
+    "Arroz al horno de patatas",
+    "Sopa de menudillos",
+    "pechuga de pollo",
+    "Croquetas"
   ],
   "26": [
-    "Sopa de calabacín",
-    "Burritos de carne",
-    "Pizza de salami",
-    "Tarta de queso con frutas"
+    "Paella de marisco",
+    "Potaje",
+    "Merluza a la plancha",
+    "Boquerón frito"
   ],
   "27": [
-    "Ensalada de rúcula y pera",
-    "Arroz con verduras",
-    "Pollo al horno con limón",
-    "Pastel de manzana"
+    "Ensaladilla rusa",
+    "Paella de bacalao y coliflor",
+    "Callos caseros",
+    "Albóndigas de carne"
   ],
   "28": [
     "Abierto",
@@ -174,15 +174,9 @@
     "-"
   ],
   "30": [
-    "Sopa de verduras",
-    "Hamburguesa con cebolla caramelizada",
-    "Pasta con almejas",
-    "Tarta de chocolate"
-  ],
-  "31": [
-    "Ensalada de pollo a la parrilla",
-    "Sopa de calabaza y jengibre",
-    "Pizza de vegetales",
-    "Helado de frutas mixtas"
+    "Alubias",
+    "Arroz seco montañés",
+    "Gambas a la plancha",
+    "Flauta de pollo"
   ]
 }
