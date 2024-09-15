@@ -156,22 +156,26 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   document.addEventListener("DOMContentLoaded", () => {
     // Obtener el día del mes actual
     const currentDay = new Date().getDate();
+    const dayCardId = `dayCard-${currentDay}`;
 
-    // Seleccionar el slider
+    // Seleccionar el slider y la dayCard correspondiente
     const slider = document.getElementById("mobile-slider");
+    const dayCard = document.getElementById(dayCardId);
 
-    // Seleccionar el dayCard correspondiente al día actual
-    const dayCard = document.getElementById(`dayCard-${currentDay}`);
-
-    if (dayCard) {
+    if (slider && dayCard) {
       // Calcular la posición de scroll para centrar el dayCard en el slider
       const sliderWidth = slider.clientWidth;
-      const cardWidth = dayCard.clientWidth;
+      const cardWidth = dayCard.offsetWidth;
       const cardOffset = dayCard.offsetLeft;
       const scrollPosition = cardOffset - sliderWidth / 2 + cardWidth / 2;
 
+      // Realizar el scroll suave
       slider.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      dayCard.classList.toggle("scale-105");
+
+      // Aplicar clase para escala (opcional)
+      dayCard.classList.add("scale-105");
+    } else {
+      console.error("El slider o la tarjeta del día actual no se encontraron.");
     }
   });
 </script>
