@@ -15,7 +15,7 @@ const firstDayOfMonth = new Date(
   1
 );
 
-// Calcular el día de la semana del primer día del mes (0 = domingo, 1 = lunes, etc.)
+// Calcular el día de la semana del primer día del mes (1 = domingo, 2 = lunes, etc.)
 const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que lunes sea 0 y domingo sea 6
 ---
 
@@ -45,7 +45,7 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   >
     {
       // Creamos un array de 31 días y añadimos los días vacíos al inicio
-      Array.from({ length: firstDayWeekIndex + 31 }, (_, i) => {
+      Array.from({ length: firstDayWeekIndex + 30 }, (_, i) => {
         if (i < firstDayWeekIndex) {
           return (
             <div
@@ -100,7 +100,7 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   <div class="hidden md:grid grid-cols-7 gap-4">
     {
       // Creamos un array de 31 días y añadimos los días vacíos al inicio
-      Array.from({ length: firstDayWeekIndex + 31 }, (_, i) => {
+      Array.from({ length: firstDayWeekIndex + 30 }, (_, i) => {
         if (i < firstDayWeekIndex) {
           return (
             <div
@@ -196,6 +196,6 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
     border-color: black;
   }
   .bg-amarillo {
-    background-color: #fecc67;
+    background-color: #fbfbfb;
   }
 </style>
