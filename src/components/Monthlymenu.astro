@@ -45,7 +45,7 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   >
     {
       // Creamos un array de 31 días y añadimos los días vacíos al inicio
-      Array.from({ length: firstDayWeekIndex + 28 }, (_, i) => {
+      Array.from({ length: firstDayWeekIndex + 31 }, (_, i) => {
         if (i < firstDayWeekIndex) {
           return (
             <div
@@ -100,7 +100,7 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   <div class="hidden md:grid grid-cols-7 gap-4">
     {
       // Creamos un array de 31 días y añadimos los días vacíos al inicio
-      Array.from({ length: firstDayWeekIndex + 28 }, (_, i) => {
+      Array.from({ length: firstDayWeekIndex + 31 }, (_, i) => {
         if (i < firstDayWeekIndex) {
           return (
             <div
