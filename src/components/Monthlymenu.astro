@@ -15,8 +15,8 @@ const firstDayOfMonth = new Date(
   1
 );
 
-// Calcular el día de la semana del primer día del mes (lunes = 1, martes = 2, etc.)
-const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que lunes sea 0 y domingo sea 6
+// Calcular el día de la semana del primer día del mes (lunes = 2, martes = 3, etc.)
+const firstDayWeekIndex = (firstDayOfMonth.getDay() + 2) % 7; // Ajuste para que lunes sea 0 y domingo sea 6
 ---
 
 <section id="menu" class="w-11/12 md:w-3/4 m-auto">
@@ -27,13 +27,6 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
     Aquí podrás encontrar los 4 platos que vamos a preparar para cada día de
     este mes, son distintos todos los días y puedes venir a probarlos a nuestro
     local o recogerlos para llevar.
-  </p>
-  <p
-    class="w-full md:w-2/4 text-negro mx-auto text-xl uppercase text-center mb-6 font-bold"
-  >
-    DURANTE EL MES DE <strong class="text-rojo">AGOSTO</strong> NO SE REALIZARÁ SERVICIO
-    DE COMIDAS EN EL LOCAL NI TAMPOCO RACIONES PARA LLEVAR. ¡NOS VEMOS CADA MAÑANA
-    A LA HORA DEL DESAYUNO!
   </p>
 
   <!--<div class="text-center mb-8">
@@ -52,7 +45,7 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   >
     {
       // Creamos un array de 31 días y añadimos los días vacíos al inicio
-      Array.from({ length: firstDayWeekIndex + 31 }, (_, i) => {
+      Array.from({ length: firstDayWeekIndex + 30 }, (_, i) => {
         if (i < firstDayWeekIndex) {
           return (
             <div
@@ -107,7 +100,7 @@ const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que
   <div class="hidden md:grid grid-cols-7 gap-4">
     {
       // Creamos un array de 31 días y añadimos los días vacíos al inicio
-      Array.from({ length: firstDayWeekIndex + 31 }, (_, i) => {
+      Array.from({ length: firstDayWeekIndex + 30 }, (_, i) => {
         if (i < firstDayWeekIndex) {
           return (
             <div
