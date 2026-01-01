@@ -16,7 +16,7 @@ const firstDayOfMonth = new Date(
 );
 
 // Calcular el día de la semana del primer día del mes (lunes = 2, martes = 3, etc.)
-const firstDayWeekIndex = (firstDayOfMonth.getDay() + 1) % 7; // Ajuste para que lunes sea 0 y domingo sea 6
+const firstDayWeekIndex = (firstDayOfMonth.getDay() + 6) % 7; // Ajuste para que lunes sea 0 y domingo sea 6
 ---
 
 <section id="menu" class="w-11/12 md:w-3/4 m-auto">
