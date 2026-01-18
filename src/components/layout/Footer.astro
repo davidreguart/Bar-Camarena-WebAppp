@@ -1,0 +1,102 @@
+---
+import content from "../../data/siteContent.json";
+
+const { footer } = content;
+const { brand, contact, social, map, copyright, credits } = footer;
+---
+
+<footer id="footer" class="pt-10 pb-4 text-sm font-light text-negro">
+  <div
+    class="w-11/12 md:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10"
+  >
+    <!-- Column 1: Brand -->
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-2">
+        <img src={brand.logo} alt={brand.alt} class="w-10 h-10" />
+        <span class="text-xl font-bold text-negro tracking-wide"
+          >{brand.name}</span
+        >
+      </div>
+      <p class="text-gray-600 leading-relaxed text-left">
+        {brand.description}
+      </p>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="flex flex-col gap-4">
+      <h3 class="font-bold text-negro tracking-wide uppercase text-left">
+        {contact.title}
+      </h3>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-start gap-3">
+          <img src={contact.icons.location} alt="Location" class="w-5 h-5 mt-1" />
+          <p class="flex-1 text-left">{contact.address}</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src={contact.icons.phone} alt="Phone" class="w-5 h-5" />
+          <p class="flex-1 text-left">{contact.phone}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Social -->
+    <div class="flex flex-col gap-4">
+      <h3 class="font-bold text-negro tracking-wide uppercase text-left">
+        {social.title}
+      </h3>
+      <div>
+        <a
+          href={social.facebook.url}
+          class="flex items-center gap-2 hover:text-azul transition-colors"
+        >
+          <img src={social.facebook.icon} alt="Facebook" class="w-5 h-5" />
+          <span>{social.facebook.text}</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Column 4: Map -->
+    <div class="relative group">
+      <div class="overflow-hidden rounded-xl h-32 w-full">
+        <img
+          src={map.image}
+          alt="Map location"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 "
+        />
+        <div
+          class="absolute inset-0 group-hover:bg-black/10 transition-colors"
+        >
+        </div>
+        <a
+          href={map.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 flex items-center justify-center p-2"
+        >
+          <span
+            class="bg-white/90 text-negro text-xs font-bold py-1 px-3 rounded shadow-sm hover:bg-white transition-colors"
+          >
+            {map.buttonText}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="w-11/12 md:w-3/4 mx-auto border-t border-gray-200 pt-4">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center gap-2 text-gray-500 text-xs"
+    >
+      <p>
+        © {new Date().getFullYear()} Bar Restaurante Camarena. Todos los
+        derechos reservados.
+      </p>
+      <p class="flex items-center gap-1">
+        {credits.text}
+        <span class="text-rojo">❤</span>
+        {credits.suffix}
+      </p>
+    </div>
+  </div>
+</footer>

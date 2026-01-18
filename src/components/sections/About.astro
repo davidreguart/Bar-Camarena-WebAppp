@@ -1,0 +1,44 @@
+---
+import content from "../../data/siteContent.json";
+
+const { about } = content;
+---
+
+<section
+  id="about"
+  class="w-11/12 md:w-3/4 mx-auto rounded-3xl bg-rojo text-white mt-24 md:mt-28 py-10"
+>
+  <div class="mx-auto text-center">
+    <!-- Desktop Title -->
+    <h1
+      class="hidden md:block text-salmon text-3xl md:text-7xl font-bold mb-8"
+      set:html={about.desktopTitle}
+    />
+    <!-- Mobile Title -->
+    <h1
+      class="block md:hidden text-salmon text-4xl font-bold mb-8"
+      set:html={about.mobileTitle}
+    />
+
+    <p
+      class="text-salmon text-base md:text-xl mx-auto font-light w-3/4 md:w-3/5 mb-8"
+    >
+      {about.description}
+    </p>
+
+    <div class="w-4/5 m-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-24">
+      {
+        about.cards.map((card) => (
+          <div class="bg-white rounded-3xl py-4 text-negro">
+            <img
+              src={card.icon}
+              alt={card.alt}
+              class={`w-12 h-12 mx-auto mb-2 ${card.extraClasses || ""}`}
+            />
+            <p class="w-3/4 m-auto">{card.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+{
+  "about": {
+    "desktopTitle": "El típico restaurante <br /> de <span class=\"text-amarillo\">toda la vida</span>",
+    "mobileTitle": "El típico bar de <br /> <span class=\"text-amarillo text-5xl\">toda la vida</span>",
+    "description": "Así es, somos lo que siempre buscas en Google como, \"bar de toda la vida\". Y estamos para ofrecerte los mejores desayunos y menús de medio día que podrás encontrar.",
+    "cards": [
+      {
+        "icon": "/img/croissant.svg",
+        "alt": "Croissant icon",
+        "text": "Tanto si eres de bollería y cafetito o d'esmorçaret de toda la vida. Tenemos lo que más te apetezca"
+      },
+      {
+        "icon": "/img/fideua.svg",
+        "alt": "Fideua icon",
+        "text": "Carnes, pescados, arroces, primeros, segundos, postres,... ¿qué más se puede pedir?",
+        "extraClasses": "mt-2 md:-mt-2"
+      },
+      {
+        "icon": "/img/tuppers.svg",
+        "alt": "Tupper Icon",
+        "text": "Y por si eres una persona ocupada, llévate nuestras raciones de mediodía"
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "logo": "/img/logo_camarena.svg",
+      "alt": "Camarena Logo",
+      "name": "CAMARENA",
+      "description": "El típico bar de toda la vida, donde la calidad y el trato familiar son nuestra seña de identidad."
+    },
+    "contact": {
+      "title": "CONTACTO",
+      "address": "C/ Músico Enrique Casanova, 8, Ontinyent (Valencia) - 46870",
+      "phone": "96 238 42 40",
+      "icons": {
+        "location": "/img/location.svg",
+        "phone": "/img/phone.svg"
+      }
+    },
+    "social": {
+      "title": "SÍGUENOS",
+      "facebook": {
+        "text": "/bar-restaurante Camarena",
+        "url": "#",
+        "icon": "/img/facebook.svg"
+      }
+    },
+    "map": {
+      "image": "/img/map.png",
+      "buttonText": "Ver en Mapa",
+      "url": "https://maps.google.com/?q=Bar+Restaurante+Camarena+Ontinyent"
+    },
+    "copyright": {
+      "text": "Bar Restaurante Camarena. Todos los derechos reservados."
+    },
+    "credits": {
+      "text": "Diseñado con",
+      "suffix": "para gente de buen comer."
+    }
+  },
+  "timetable": {
+    "info": {
+      "title": "Abiertos para ti",
+      "description": "Nuestro horario está pensado para dar servicio desde el primer café de la mañana hasta la sobremesa del mediodía.",
+      "cta": "¡Ven a vernos!",
+      "status": "Cocina abierta mediodía"
+    },
+    "ticket": {
+      "title": "BAR CAMARENA",
+      "address": "C/ Músico Enrique Casanova, 8\nOntinyent, Valencia",
+      "subtitle": "TICKET DE HORARIO",
+      "schedule": [
+        {
+          "day": "LUNES",
+          "hours": "08:30 - 16:00"
+        },
+        {
+          "day": "MARTES",
+          "hours": "08:30 - 16:00"
+        },
+        {
+          "day": "MIÉRCOLES",
+          "hours": "08:30 - 16:00"
+        },
+        {
+          "day": "JUEVES",
+          "hours": "08:30 - 16:00"
+        },
+        {
+          "day": "VIERNES",
+          "hours": "08:30 - 16:00"
+        },
+        {
+          "day": "SÁBADO",
+          "hours": "08:30 - 12:00"
+        },
+        {
+          "day": "DOMINGO",
+          "hours": "Cerrado"
+        }
+      ],
+      "footer": "¡GRACIAS!",
+      "subfooter": "Esperamos verle pronto"
+    }
+  }
+}

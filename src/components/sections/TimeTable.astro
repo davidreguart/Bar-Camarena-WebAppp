@@ -1,0 +1,96 @@
+---
+import content from "../../data/siteContent.json";
+
+const { timetable } = content;
+const { info, ticket } = timetable;
+const currentYear = new Date().getFullYear();
+---
+
+<section id="timetable" class="py-12 md:pb-16 md:pt-2 font-sans relative overflow-hidden">
+  <!-- Decorative background pattern (optional) -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none" 
+       style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;">
+  </div>
+
+  <div class="w-11/12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center justify-items-center">
+    
+    <!-- Left Column: Info -->
+    <div class="text-white space-y-4 text-center md:text-left w-full">
+      <h2 class="text-negro text-3xl md:text-4xl font-bold tracking-tight">
+        {info.title}
+      </h2>
+      <p class="text-negro text-base leading-relaxed max-w-sm mx-auto md:mx-0">
+        {info.description}
+      </p>
+      
+      <div class="pt-2 flex flex-col items-center md:items-start">
+        <span class="text-rojo font-bold text-lg block mb-4">{info.cta}</span>
+        
+        <div class="inline-flex items-center gap-2 bg-amarillo backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/20">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-azul opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-azul"></span>
+          </span>
+          <span class="text-negro text-xs font-medium tracking-wide">{info.status}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Ticket -->
+    <div class="relative w-full max-w-xs transform rotate-1 hover:rotate-0 transition-transform duration-500">
+      <!-- Ticket Container -->
+      <div class="bg-blanco p-6 pb-12 relative shadow-2xl font-mono text-[10px] md:text-xs text-negro mx-auto">
+        
+        <!-- Ticket Header -->
+        <div class="text-center space-y-1 mb-4 border-b border-dashed border-gray-300 pb-4">
+          <h3 class="text-lg font-bold tracking-wider">{ticket.title}</h3>
+          <p class="whitespace-pre-line text-gray-500 text-[10px]">{ticket.address}</p>
+          <div class="mt-2 pt-1">
+            <p class="uppercase font-bold text-gray-400 text-[9px] tracking-widest">{ticket.subtitle}</p>
+            <p class="text-gray-400 text-[9px]">{new Date().toLocaleDateString('es-ES')}</p>
+          </div>
+        </div>
+
+        <!-- Schedule List -->
+        <div class="space-y-2 mb-4">
+          {ticket.schedule.map((slot) => (
+            <div class="flex justify-between items-end border-b border-gray-100 pb-0.5">
+              <span class="font-bold uppercase">{slot.day}</span>
+              <span class="text-gray-600">{slot.hours}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center border-t border-dashed border-gray-300 pt-4 space-y-0.5 mb-6">
+          <p class="font-bold text-base">{ticket.footer}</p>
+          <p class="italic text-gray-500 font-serif text-[10px]">{ticket.subfooter}</p>
+        </div>
+
+        <!-- Barcode -->
+        <div class="flex justify-center items-end h-10 gap-[2px] opacity-80 overflow-hidden">
+          <!-- Generating random bars for visual effect -->
+          {Array.from({ length: 40 }).map((_, i) => (
+            <div 
+              class={`bg-negro ${i % 3 === 0 ? 'w-0.5 h-full' : i % 2 === 0 ? 'w-1.5 h-8' : 'w-px h-9'}`}
+            ></div>
+          ))}
+        </div>
+        <p class="text-center text-[8px] tracking-[0.5em] mt-0.5 text-gray-400">80424896238</p>
+
+        <!-- Serrated Bottom Edge (Pure CSS) -->
+        <div class="absolute -bottom-1.5 left-0 w-full h-3 overflow-hidden" 
+             style="background: radial-gradient(circle, transparent 50%, #ffffff 50%) -5px -2.5px / 12px 12px repeat-x, #ffffff;">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Optional: Enhance font rendering for mono */
+  .font-mono {
+    font-family: 'Courier New', Courier, monospace;
+  }
+</style>
