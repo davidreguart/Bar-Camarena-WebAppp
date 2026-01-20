@@ -103,5 +103,139 @@
       "footer": "¡GRACIAS!",
       "subfooter": "Esperamos verle pronto"
     }
+  },
+  "carta": {
+    "title": "Nuestra Carta",
+    "subtitle": "Sabores tradicionales hechos al momento",
+    "categories": [
+      {
+        "name": "Esmorzar Popular (Bocadillos)",
+        "description": "El auténtico esmorzaret con pan recién horneado.",
+        "extraInfo": "Ingrediente extra 0,50€",
+        "icon": "/img/croissant.svg",
+        "items": [
+          {
+            "name": "EL VEGETAL",
+            "ingredients": "Lechuga, huevo duro, tomate, atún, mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El Macerado",
+            "ingredients": "Bacalao o Mojama o Salmón con queso fresco y tomate",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El del Huevo",
+            "ingredients": "Huevo frito, bacon, queso manchego",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Pechuga",
+            "ingredients": "Pechuga pollo, cebolla y mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Pechuga especial",
+            "ingredients": "Pechuga pollo, bacon, queso, lechuga, mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "Las tortillas",
+            "ingredients": "Patatas o ajos o alcachofa o cebolla",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Sepia",
+            "ingredients": "Sepia, picadillo, mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Calamares",
+            "ingredients": "Calamar rebozado con picadillo, mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "La melosa",
+            "ingredients": "Tortilla con atún, queso y tomate",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Chipirones",
+            "ingredients": "Chipirones, picadillo, mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de la Casa",
+            "ingredients": "Lomo, tomate, queso manchego, picadillo",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Lomo Especial",
+            "ingredients": "Lomo, pimiento verde, queso, cebolla y mayonesa",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "La Brascada",
+            "ingredients": "Ternera, cebolla y jamón plancha",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El chivito",
+            "ingredients": "Lomo, tomate, queso, lechuga y huevo frito",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Blanco y Negro",
+            "ingredients": "Longaniza, morcilla",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "Los chorizitos",
+            "ingredients": "Chorizos plancha",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El Clásico",
+            "ingredients": "Tortilla y longaniza",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El falso Blanco y Negro",
+            "ingredients": "Sepia, hígado y picadillo",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "Serranito",
+            "ingredients": "Lomo, pimiento verde y jamón plancha",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          },
+          {
+            "name": "El de Sobrasada",
+            "ingredients": "Sobrasada y queso blanco plancha",
+            "priceHalf": "3€",
+            "priceWhole": "6€"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -7,7 +7,7 @@ const navButton =
   class="md:w-3/4 mx-auto px-4 py-2 md:p-4 flex justify-between items-center fixed top-0 left-0 right-0 rounded-b-2xl bg-salmon shadow-lg md:shadow-none z-50"
 >
   <!-- Logo -->
-  <a href="#" id="logo-link" aria-label="Volver al inicio">
+  <a href="/" id="logo-link" aria-label="Volver al inicio">
     <div class="w-24 md:w-32">
       <img src="/img/logo_camarena.svg" alt="Logo Camarena" />
     </div>
@@ -20,10 +20,11 @@ const navButton =
   </div>
   <!-- Navigation Links -->
   <ul id="nav-links" class="hidden md:flex gap-4 text-negro font-bold">
-    <li><a href="#about" class={navButton}>Inicio</a></li>
-    <li><a href="#menu" class={navButton}>Menú diario</a></li>
-    <li><a href="#timetable" class={navButton}>Horario</a></li>
-    <li><a href="#footer" class={navButton}>Contacto</a></li>
+    <li><a href="/#about" class={navButton}>Inicio</a></li>
+    <li><a href="/#menu" class={navButton}>Menú diario</a></li>
+    <li><a href="/carta" class={navButton}>Nuestra Carta</a></li>
+    <li><a href="/#timetable" class={navButton}>Horario</a></li>
+    <li><a href="/#footer" class={navButton}>Contacto</a></li>
   </ul>
 </nav>
 
@@ -32,10 +33,11 @@ const navButton =
   id="mobile-menu"
   class="fixed top-16 left-0 w-full flex-col space-y-4 text-negro md:hidden text-center py-5 bg-gradient-to-b from-salmon to-salmon-dark rounded-xl menu-slide-in hidden"
 >
-  <li><a href="#about" class="hover:text-gray-900">Sobre nosotros</a></li>
-  <li><a href="#menu" class="hover:text-gray-900">Menú diario</a></li>
-  <li><a href="#timetable" class="hover:text-gray-900">Horario</a></li>
-  <li><a href="#footer" class="hover:text-gray-900">Contacto</a></li>
+  <li><a href="/#about" class="hover:text-gray-900">Inicio</a></li>
+  <li><a href="/#menu" class="hover:text-gray-900">Menú diario</a></li>
+  <li><a href="/carta" class="hover:text-gray-900">Nuestra Carta</a></li>
+  <li><a href="/#timetable" class="hover:text-gray-900">Horario</a></li>
+  <li><a href="/#footer" class="hover:text-gray-900">Contacto</a></li>
 </ul>
 
 <script>

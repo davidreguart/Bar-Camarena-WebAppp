@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import siteContent from "../data/siteContent.json";
+
+const { carta } = siteContent;
+---
+
+<Layout title="Nuestra Carta - Bar Restaurante Camarena">
+  <Navbar />
+  
+  <main class="pt-32 pb-12 w-11/12 md:w-3/4 mx-auto min-h-screen">
+    <div class="relative mb-12 text-center">
+      <a href="/" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 items-center text-negro hover:text-rojo transition-colors font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver
+      </a>
+      <h1 class="text-4xl font-bold text-negro">{carta.title}</h1>
+      <p class="text-gray-500 mt-2">{carta.subtitle}</p>
+    </div>
+
+    {carta.categories.map((category) => (
+      <section class="bg-blanco rounded-3xl p-6 md:p-8 mb-8 shadow-sm border border-gray-100">
+        <div class="bg-salmon/30 rounded-2xl p-6 mb-8 flex items-start md:items-center">
+            <span class="text-amarillo text-2xl mr-4">★</span>
+            <div>
+                <h2 class="text-xl font-bold text-negro">
+                    {category.name}
+                </h2>
+                <p class="text-sm text-gray-600 mt-1">{category.description}</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8">
+          {category.items.map((item) => (
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-100 pb-6 last:border-0 last:pb-0 group hover:bg-gray-50/50 transition-colors rounded-lg p-2 -mx-2">
+              <div class="pr-4 mb-3 md:mb-0">
+                <h3 class="text-lg font-bold text-negro group-hover:text-rojo transition-colors">{item.name}</h3>
+                <p class="text-sm text-gray-500 italic mt-1">{item.ingredients}</p>
+              </div>
+              <div class="text-right whitespace-nowrap flex gap-4 self-end md:self-center">
+                 <div class="flex flex-col items-end">
+                    <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Medio</span>
+                    <span class="text-lg font-bold text-azul">{item.priceHalf}</span>
+                 </div>
+                 <div class="flex flex-col items-end">
+                    <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Entero</span>
+                    <span class="text-lg font-bold text-rojo">{item.priceWhole}</span>
+                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {category.extraInfo && (
+            <div class="mt-8 bg-amarillo/20 text-amarillo text-center py-2 rounded-lg font-bold border border-amarillo/30">
+                ➕ {category.extraInfo}
+            </div>
+        )}
+      </section>
+    ))}
+
+  </main>
+  
+  <footer class="py-4 text-center text-sm text-negro">
+    <Footer />
+  </footer>
+</Layout>
