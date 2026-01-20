@@ -194,7 +194,7 @@
           },
           {
             "name": "El chivito",
-            "ingredients": "Lomo, tomate, queso, lechuga y huevo frito",
+            "ingredients": "Lomo, tomate, queso, lechuga, mayonesa y huevo frito",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },
@@ -205,7 +205,7 @@
             "priceWhole": "6€"
           },
           {
-            "name": "Los chorizitos",
+            "name": "Los choricitos",
             "ingredients": "Chorizos plancha",
             "priceHalf": "3€",
             "priceWhole": "6€"
@@ -224,7 +224,7 @@
           },
           {
             "name": "Serranito",
-            "ingredients": "Lomo, pimiento verde y jamón plancha",
+            "ingredients": "Lomo, pimiento verde, tomate a rodajas y jamón plancha",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },
