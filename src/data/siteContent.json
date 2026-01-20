@@ -115,7 +115,7 @@
         "icon": "/img/croissant.svg",
         "items": [
           {
-            "name": "EL VEGETAL",
+            "name": "El Vegetal",
             "ingredients": "Lechuga, huevo duro, tomate, atún, mayonesa",
             "priceHalf": "3€",
             "priceWhole": "6€"
@@ -176,7 +176,7 @@
           },
           {
             "name": "El de la Casa",
-            "ingredients": "Lomo, tomate, queso manchego, picadillo",
+            "ingredients": "Lomo, tomate, queso manchego y picadillo",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },
