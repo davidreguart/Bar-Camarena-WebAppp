@@ -107,6 +107,12 @@
   "carta": {
     "title": "Nuestra Carta",
     "subtitle": "Sabores tradicionales hechos al momento",
+    "popularLunch": {
+      "halfPrice": "7'50€",
+      "wholePrice": "8'50",
+      "includes": "incluye bocata o medio bocata, una bebida, aceitunas, cacahuetes y servicio de café",
+      "noCoffeeDiscount": "Si no se quiere café se restará 1€ al precio del almuerzo."
+    },
     "categories": [
       {
         "name": "Esmorzar Popular (Bocadillos)",

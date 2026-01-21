@@ -22,6 +22,35 @@ const { carta } = siteContent;
       <p class="text-gray-500 mt-2">{carta.subtitle}</p>
     </div>
 
+    {carta.popularLunch && (
+      <div class="mb-12 bg-white rounded-3xl p-8 shadow-sm border border-gray-100 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-salmon/20 rounded-full -mr-16 -mt-16"></div>
+        <div class="relative z-10">
+          <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+            <div class="text-center md:text-left">
+              <h2 class="text-2xl font-bold text-negro mb-1">Almuerzo Popular</h2>
+              <p class="text-gray-500 italic">({carta.popularLunch.includes})</p>
+            </div>
+            <div class="flex gap-4">
+              <div class="bg-salmon-dark/20 px-6 py-3 rounded-2xl text-center border border-salmon-dark/30">
+                <span class="block text-xs text-gray-400 font-bold uppercase tracking-wider">Medio</span>
+                <span class="text-2xl font-bold text-azul">{carta.popularLunch.halfPrice}</span>
+              </div>
+              <div class="bg-salmon-dark/20 px-6 py-3 rounded-2xl text-center border border-salmon-dark/30">
+                <span class="block text-xs text-gray-400 font-bold uppercase tracking-wider">Entero</span>
+                <span class="text-2xl font-bold text-rojo">{carta.popularLunch.wholePrice}€</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-amarillo/10 border-l-4 border-amarillo p-4 rounded-r-xl">
+            <p class="text-sm text-negro font-medium">
+              <span class="mr-2">☕</span> {carta.popularLunch.noCoffeeDiscount}
+            </p>
+          </div>
+        </div>
+      </div>
+    )}
+
     {carta.categories.map((category) => (
       <section class="bg-blanco rounded-3xl p-6 md:p-8 mb-8 shadow-sm border border-gray-100">
         <div class="bg-salmon/30 rounded-2xl p-6 mb-8 flex items-start md:items-center">
