@@ -81,8 +81,10 @@ const daysOfWeekList = [
 
         return (
           <div
-            id={`dayCard-${day}`}
-            class={`inline-block text-center border-2 border-negro rounded-xl p-4 w-52 m-2 ${cardClass}`}
+            id={`dayCard-mobile-${day}`}
+            data-day={day}
+            data-is-closed={isTransparent}
+            class={`day-card inline-block text-center border-2 border-negro rounded-xl p-4 w-52 m-2 ${cardClass}`}
           >
             <h3 class="text-xl font-bold mb-2">{day}</h3>
             <p class="text-sm font-medium mb-1">{dayOfWeek}</p>
@@ -126,7 +128,10 @@ const daysOfWeekList = [
 
         return (
           <div
-            class={`text-center border-2 border-negro rounded-xl p-2 ${cardClass}`}
+            id={`dayCard-desktop-${day}`}
+            data-day={day}
+            data-is-closed={isTransparent}
+            class={`day-card text-center border-2 border-negro rounded-xl p-2 ${cardClass}`}
           >
             <h3 class="text-xl font-bold mb-2">
               {dayOfWeek} {day}
@@ -147,37 +152,49 @@ const daysOfWeekList = [
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const currentDay = new Date().getDate();
-    const dayCardId = `dayCard-${currentDay}`;
-    const dayCard = document.getElementById(dayCardId);
+    
+    // Dynamic highlighting logic
+    const allCards = document.querySelectorAll('.day-card');
+    allCards.forEach(card => {
+      const cardDay = parseInt(card.getAttribute('data-day') || '0');
+      const isClosed = card.getAttribute('data-is-closed') === 'true';
+      
+      if (cardDay === currentDay) {
+        if (!isClosed) {
+          card.classList.add('bg-amarillo');
+          card.classList.remove('bg-blanco');
+        }
+      } else {
+        // Remove highlighting from other cards (in case they were highlighted at build time)
+        if (!isClosed) {
+          card.classList.remove('bg-amarillo');
+          card.classList.add('bg-blanco');
+        }
+      }
+    });
+
+    // Scrolling logic for mobile
+    const mobileDayCardId = `dayCard-mobile-${currentDay}`;
+    const dayCard = document.getElementById(mobileDayCardId);
     const slider = document.getElementById("mobile-slider");
 
     if (dayCard && slider) {
-      // Usar IntersectionObserver para detectar cuando el slider entra en la vista
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Calcular la posición de scroll para centrar el dayCard en el slider
             const sliderWidth = slider.clientWidth;
             const cardWidth = dayCard.offsetWidth;
             const cardOffset = dayCard.offsetLeft;
             const scrollPosition = cardOffset - sliderWidth / 2 + cardWidth / 2;
 
-            // Realizar el scroll suave
             slider.scrollTo({ left: scrollPosition, behavior: "smooth" });
-
-            // Aplicar clase para escala (opcional)
             dayCard.classList.add("scale-105");
-
-            // Dejar de observar una vez que se ha realizado el scroll
             observer.unobserve(slider);
           }
         });
       });
 
-      // Comenzar a observar el slider
       observer.observe(slider);
-    } else {
-      // console.error("El slider o la tarjeta del día actual no se encontraron.");
     }
   });
 </script>
