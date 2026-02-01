@@ -6,12 +6,14 @@ import {
   isDateToday,
   getFirstDayWeekIndex,
   getCalendarSlots,
+  getDaysInCurrentMonth,
 } from "../../utils/dateUtils";
 
 // Date logic extracted to utils
 const currentDay = getCurrentDay();
 const firstDayWeekIndex = getFirstDayWeekIndex();
-const calendarSlots = getCalendarSlots(firstDayWeekIndex);
+const daysInMonth = getDaysInCurrentMonth();
+const calendarSlots = getCalendarSlots(firstDayWeekIndex, daysInMonth);
 
 const getDishesForDay = (dayIndex: number) => {
   if (dayIndex < firstDayWeekIndex) return null;

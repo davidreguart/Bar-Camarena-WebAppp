@@ -1,0 +1,118 @@
+---
+---
+
+<div
+  id="promo-modal-overlay"
+  class="fixed inset-0 bg-negro/10 backdrop-blur-md z-[200] hidden opacity-0 transition-opacity duration-500 flex items-center justify-center p-4"
+>
+  <div
+    id="promo-modal"
+    class="relative w-full max-w-lg bg-white/20 backdrop-blur-md border border-white/30 rounded-[2.5rem] p-8 md:p-12 shadow-2xl scale-90 opacity-0 transition-all duration-500 overflow-hidden"
+  >
+    <!-- Background abstract shapes for "Liquid" look -->
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-rojo/20 rounded-full blur-md pointer-events-none"></div>
+    <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-amarillo/20 rounded-full blur-md pointer-events-none"></div>
+
+    <button
+      id="close-promo-modal"
+      class="absolute top-6 right-6 p-2 text-negro/60 hover:text-rojo transition-colors z-10"
+      aria-label="Cerrar"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="relative z-10 text-center">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-rojo rounded-2xl mb-6 shadow-lg rotate-3 hover:rotate-0 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-negro mb-6 leading-tight">
+        ¡RECUERDA!
+      </h2>
+      
+      <p class="text-lg md:text-xl text-negro/80 font-medium mb-8 leading-relaxed">
+        También disponemos de <span class="text-rojo font-bold">menú diario</span> de lunes a viernes y raciones para llevar.
+      </p>
+      
+      <p class="text-xl md:text-2xl font-bold text-negro mb-10">
+        ¿No te apetece venir hoy a probarlos?
+      </p>
+
+      <div class="flex flex-col gap-4">
+        <a
+          href="/#menu"
+          id="view-menu-btn"
+          class="w-full bg-rojo text-white py-4 px-8 rounded-2xl font-bold text-lg shadow-xl shadow-rojo/20 hover:bg-negro hover:shadow-negro/20 transition-all duration-300 active:scale-95"
+        >
+          Ver Menú de Hoy
+        </a>
+        <button
+          id="close-promo-btn"
+          class="w-full bg-transparent text-negro/60 py-3 px-8 rounded-2xl font-bold hover:text-negro transition-colors"
+        >
+          Quizás más tarde
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const showModal = () => {
+    const overlay = document.getElementById('promo-modal-overlay');
+    const modal = document.getElementById('promo-modal');
+
+    if (overlay && modal) {
+      overlay.classList.remove('hidden');
+      // Trigger reflow
+      void overlay.offsetWidth;
+      
+      overlay.classList.add('opacity-100');
+      modal.classList.add('opacity-100', 'scale-100');
+      modal.classList.remove('scale-90', 'opacity-0');
+      
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeModal = () => {
+    const overlay = document.getElementById('promo-modal-overlay');
+    const modal = document.getElementById('promo-modal');
+
+    if (overlay && modal) {
+      overlay.classList.remove('opacity-100');
+      modal.classList.remove('opacity-100', 'scale-100');
+      modal.classList.add('scale-90', 'opacity-0');
+      
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 500);
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Show modal with a small delay for better UX on every load
+    setTimeout(showModal, 1500);
+
+    const closeBtns = ['close-promo-modal', 'close-promo-btn', 'view-menu-btn'];
+    closeBtns.forEach(id => {
+      document.getElementById(id)?.addEventListener('click', closeModal);
+    });
+
+    document.getElementById('promo-modal-overlay')?.addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+  });
+</script>
+
+<style>
+  #promo-modal {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  }
+</style>

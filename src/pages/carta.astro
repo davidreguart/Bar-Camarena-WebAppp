@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
+import PromoModal from "../components/modals/PromoModal.astro";
 import siteContent from "../data/siteContent.json";
 
 const { carta } = siteContent;
@@ -9,6 +10,7 @@ const { carta } = siteContent;
 
 <Layout title="Nuestra Carta - Bar Restaurante Camarena">
   <Navbar />
+  <PromoModal />
   
   <main class="pt-32 pb-12 w-11/12 md:w-3/4 mx-auto min-h-screen">
     <div class="relative mb-12 text-center">
