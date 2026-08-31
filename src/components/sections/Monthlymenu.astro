@@ -70,7 +70,6 @@ const daysOfWeekList = [
         // - If Today and Open -> bg-amarillo
         // - If Closed (isTransparent) -> transparent-card (Red)
         // - If Today and Closed -> transparent-card (Red) - Priority to Closed color as requested, or keep red. 
-        // User said: "exception: if it is a day the restaurant is closed, in that case it must maintain the red."
         
         let cardClass = "bg-blanco"; // Default
         if (isTransparent) {
@@ -206,5 +205,4 @@ const daysOfWeekList = [
     background-color: rgba(234, 88, 87, 0.5); /* Rojo con opacidad */
     border-color: black;
   }
-  /* bg-amarillo is handled by Tailwind util, removing override */
 </style>

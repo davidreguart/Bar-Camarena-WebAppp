@@ -1,30 +1,50 @@
 /**
- * Gets the current day of the month (1-31).
+ * Threshold day of the month after which updates are considered to target the upcoming month.
+ * From day 28 onwards (the last days of the month), the calendar automatically formats for next month.
  */
-export const getCurrentDay = (): number => new Date().getDate();
+export const MONTH_TRANSITION_DAY_THRESHOLD = 28;
 
 /**
- * Checks if a given day is today.
+ * Gets the target Date object (set to the 1st day of the target month).
+ * If the current day is >= MONTH_TRANSITION_DAY_THRESHOLD, it returns the 1st day of next month.
+ * Otherwise, it returns the 1st day of the current month.
  */
-export const isDateToday = (day: number): boolean => day === getCurrentDay();
-
-/**
- * Gets the day of the week index (0=Monday, 6=Sunday) for the first day of the current month.
- */
-export const getFirstDayWeekIndex = (): number => {
-  const now = new Date();
-  const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-  // getDay() returns 0=Sunday, 1=Monday... we want 0=Monday
-  return (firstDayOfMonth.getDay() + 6) % 7;
+export const getTargetMenuDate = (baseDate: Date = new Date()): Date => {
+  const currentDay = baseDate.getDate();
+  if (currentDay >= MONTH_TRANSITION_DAY_THRESHOLD) {
+    return new Date(baseDate.getFullYear(), baseDate.getMonth() + 1, 1);
+  }
+  return new Date(baseDate.getFullYear(), baseDate.getMonth(), 1);
 };
 
 /**
- * Gets the number of days in the current month.
+ * Gets the current day of the month (1-31).
  */
-export const getDaysInCurrentMonth = (): number => {
-  const now = new Date();
-  // Setting day to 0 of the next month gives us the last day of the current month
-  return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+export const getCurrentDay = (baseDate: Date = new Date()): number => baseDate.getDate();
+
+/**
+ * Checks if a given day is today (resalta siempre el día actual del mes).
+ */
+export const isDateToday = (day: number, baseDate: Date = new Date()): boolean => {
+  return day === getCurrentDay(baseDate);
+};
+
+/**
+ * Gets the day of the week index (0=Monday, 6=Sunday) for the first day of the target month.
+ */
+export const getFirstDayWeekIndex = (baseDate: Date = new Date()): number => {
+  const firstDay = getTargetMenuDate(baseDate);
+  // getDay() returns 0=Sunday, 1=Monday... we want 0=Monday
+  return (firstDay.getDay() + 6) % 7;
+};
+
+/**
+ * Gets the number of days in the target menu month.
+ */
+export const getDaysInCurrentMonth = (baseDate: Date = new Date()): number => {
+  const targetDate = getTargetMenuDate(baseDate);
+  // Setting day to 0 of the following month gives the last day of the target month
+  return new Date(targetDate.getFullYear(), targetDate.getMonth() + 1, 0).getDate();
 };
 
 /**

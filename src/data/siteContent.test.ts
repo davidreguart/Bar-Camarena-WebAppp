@@ -46,7 +46,7 @@ describe('siteContent data integrity', () => {
 
     expect(itemNames).toContain('El chivito'); // User provided "El chivito"
     // Let's check a few from the user list:
-    expect(itemNames).toContain('EL VEGETAL');
+    expect(itemNames).toContain('El Vegetal');
     expect(itemNames).toContain('El Macerado');
     expect(itemNames).toContain('La Brascada');
   });
