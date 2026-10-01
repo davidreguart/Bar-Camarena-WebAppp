@@ -1,182 +1,33 @@
 {
-  "1": [
-    "Macarrones",
-    "Arroz meloso montañés",
-    "Chipirones",
-    "Pechuga pollo"
-  ],
-  "2": [
-    "Arroz a la cubana",
-    "Patata con bacalao",
-    "Flauta pollo",
-    "Boquerón frito"
-  ],
-  "3": [
-    "Paella valenciana",
-    "Lentejas",
-    "Huevos bacon",
-    "Croquetas"
-  ],
-  "4": [
-    "Ensaladilla sepia",
-    "Arroz al horno",
-    "Sándwich vegetal",
-    "Tortilla con gamba"
-  ],
-  "5": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "6": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "7": [
-    "Sopa fideos con huevo y pollo",
-    "Espaguetis bacon",
-    "Lomo con tomate",
-    "Chipirones"
-  ],
-  "8": [
-    "Fideuá",
-    "Alubias",
-    "Hamburguesa",
-    "Merluza"
-  ],
-  "9": [
-    "Arroz al horno de patata y tomate",
-    "Sopa castellana",
-    "Flauta jamón",
-    "Dorada"
-  ],
-  "10": [
-    "Arroz negro",
-    "Potaje",
-    "Pinchos",
-    "Croquetas"
-  ],
-  "11": [
-    "Ensalada pasta",
-    "Arroz al horno",
-    "Albóndigas carne",
-    "Pataqueta"
-  ],
-  "12": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "13": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "14": [
-    "Sopa marisco con fideos",
-    "Arroz a la cubana",
-    "Lomo ajitos",
-    "Tortilla al gusto"
-  ],
-  "15": [
-    "Canelones",
-    "Ensaladilla rusa",
-    "Boquerón frito",
-    "Huevos rotos"
-  ],
-  "16": [
-    "Gazpacho",
-    "Arroz al horno de patata y tomate",
-    "Dorada",
-    "Flauta jamón"
-  ],
-  "17": [
-    "Arroz meloso con gamba",
-    "Espaguetis",
-    "Pechuga",
-    "Merluza"
-  ],
-  "18": [
-    "Paella valenciana",
-    "Sopa verduras",
-    "Chipirones",
-    "Alita pollo"
-  ],
-  "19": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "20": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "21": [
-    "Fideuá",
-    "Arroz a la cubana",
-    "Sándwich pollo",
-    "Tortilla al gusto"
-  ],
-  "22": [
-    "Arroz caldoso con acelgas",
-    "Macarrones al horno",
-    "Chipirones",
-    "Lomo ajitos"
-  ],
-  "23": [
-    "Lentejas",
-    "Paella marisco",
-    "Huevos bacon",
-    "Boquerón frito"
-  ],
-  "24": [
-    "Arroz seco montañés",
-    "Sopa ajo",
-    "Pinchos",
-    "Calabacín relleno de verdura y champiñón"
-  ],
-  "25": [
-    "Arroz meloso con sepia y alcachofa",
-    "Flauta pollo",
-    "Hamburguesa",
-    "Bocata calamares"
-  ],
-  "26": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "27": [
-    "-",
-    "-",
-    "-",
-    "-"
-  ],
-  "28": [
-    "Arroz meloso con gamba",
-    "Espaguetis",
-    "Boquerón",
-    "Croquetas"
-  ],
-  "29": [
-    "Gazpachos",
-    "Arroz a la cubana",
-    "Berenjena rellena",
-    "Huevos bacon"
-  ],
-  "30": [
-    "Guisado",
-    "Pimientos rellenos",
-    "Tortilla al gusto",
-    "Chipirones"
-  ]
+    "1": ["Paella bacalao y coliflor", "Sopa ajo", "Alitas pollo", "Merluza"],
+    "2": ["Arroz al horno", "Ensalada de pasta", "Pataqueta", "Dorada"],
+    "3": ["-", "-", "-", "-"],
+    "4": ["-", "-", "-", "-"],
+    "5": ["Arroz meloso con chipirones", "Macarrones", "Croquetas", "Flauta jamón queso"],
+    "6": ["Arroz negro", "Sopa castellana", "Sándwich de pollo", "Sardinas"],
+    "7": ["Arroz al horno", "Lentejas", "Lomo con tomate y longaniza", "Chipirones plancha"],
+    "8": ["Paella valenciana", "Sopa fideos con pollo y huevo", "Boquerón frito", "Pechuga pollo"],
+    "9": ["-", "-", "-", "-"],
+    "10": ["-", "-", "-", "-"],
+    "11": ["-", "-", "-", "-"],
+    "12": ["-", "-", "-", "-"],
+    "13": ["-", "-", "-", "-"],
+    "14": ["Arroz a la cubana", "Patatas con bacalao", "Hamburguesas", "Chipirones plancha"],
+    "15": ["Sopa de menudillos", "Paella marisco", "Pinchos", "Tortilla gamba"],
+    "16": ["Fideuá", "Sopa verduras", "Huevos rotos", "Bocata calamares"],
+    "17": ["-", "-", "-", "-"],
+    "18": ["-", "-", "-", "-"],
+    "19": ["Sopa de fideos con pollo y huevo", "Arroz seco montañés", "Pechuga pollo", "Dorada"],
+    "20": ["Arroz meloso con gamba", "Macarrones al horno", "Tortilla al gusto", "Sardinas"],
+    "21": ["Canelones", "Potaje", "Flauta de pollo", "Boquerón frito"],
+    "22": ["Gazpachos", "Arroz a la cubana", "Croquetas", "Hamburguesas"],
+    "23": ["Arroz al horno de patata y tomate", "Lentejas", "Flauta vegetal", "Huevos bacon"],
+    "24": ["-", "-", "-", "-"],
+    "25": ["-", "-", "-", "-"],
+    "26": ["Espaguetis con bacon", "Arroz meloso montañés", "Merluza", "Lomo con ajitos"],
+    "27": ["Pimientos rellenos", "Sopa verduras", "Tortilla al gusto", "Chipirones"],
+    "28": ["Gazpachos", "Macarrones", "Dorada", "Albóndigas carne"],
+    "29": ["Arroz al horno", "Sopa marisco con fideos", "Croquetas", "Huevos bacon"],
+    "30": ["Fideuá", "Ensaladilla de sepia", "Pataqueta", "Bacalao frito"],
+    "31": ["-", "-", "-", "-"]
 }
