@@ -284,15 +284,18 @@
     "items": [
       {
         "quote": "Su bocadillo de calamares a la plancha es sencillamente exquisito.",
-        "author": "A. F."
+        "author": "A. F.",
+        "rating": 5
       },
       {
         "quote": "Es el único bar que nos ha dado almuerzo a esta hora, ¡un gran servicio!",
-        "author": "Josemaasa"
+        "author": "Josemaasa",
+        "rating": 5
       },
       {
         "quote": "Servicio muy rápido y atento. El bocadillo que probé estaba muy rico.",
-        "author": "Antonio R."
+        "author": "Antonio R.",
+        "rating": 5
       }
     ],
     "source": "Opiniones de clientes en Google",

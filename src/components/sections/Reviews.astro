@@ -9,10 +9,28 @@ const { reviews } = content;
     {reviews.title}
   </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-4xl mx-auto">
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 max-w-4xl mx-auto divide-y md:divide-y-0 md:divide-x divide-negro/15"
+  >
     {
       reviews.items.map((review) => (
-        <figure class="text-center">
+        <figure class="text-center px-6 py-6 md:py-2">
+          <div
+            class="flex justify-center gap-1 mb-4"
+            role="img"
+            aria-label={`${review.rating} de 5 estrellas`}
+          >
+            {Array.from({ length: 5 }, (_, i) => (
+              <svg
+                viewBox="0 0 24 24"
+                class={`w-4 h-4 ${i < review.rating ? "text-amarillo" : "text-negro/15"}`}
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M12 2.5l2.94 6.1 6.56.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6-4.8-4.6 6.56-.9L12 2.5z" />
+              </svg>
+            ))}
+          </div>
           <blockquote class="text-negro/80 text-lg leading-relaxed">
             &ldquo;{review.quote}&rdquo;
           </blockquote>
