@@ -49,12 +49,15 @@
         "text": "/bar-restaurante Camarena",
         "url": "https://www.facebook.com/barrestaurante.camarena",
         "icon": "/img/facebook.svg"
+      },
+      "google": {
+        "url": "https://g.page/r/CUzoQMk4ijh9EAE"
       }
     },
     "map": {
       "image": "/img/map.webp",
       "buttonText": "Ver en Mapa",
-      "url": "https://maps.google.com/?q=Bar+Restaurante+Camarena+Ontinyent"
+      "url": "https://maps.google.com/?cid=9023113829936064588"
     },
     "copyright": {
       "text": "Bar Restaurante Camarena. Todos los derechos reservados."
@@ -275,5 +278,25 @@
       "reserve": "Reserva por teléfono o en el local"
     },
     "fact": "Bar Restaurante Camarena, en la calle Músico Enrique Casanova, 8 de Ontinyent, sirve desayunos y esmorzars de lunes a sábado desde las 8:30 y menú del día de lunes a viernes por 14 €: primer plato, segundo plato, postre y bebida. También tienes raciones individuales para llevar a 5 €."
+  },
+  "reviews": {
+    "title": "Lo que dicen de nosotros",
+    "items": [
+      {
+        "quote": "Su bocadillo de calamares a la plancha es sencillamente exquisito.",
+        "author": "A. F."
+      },
+      {
+        "quote": "Es el único bar que nos ha dado almuerzo a esta hora, ¡un gran servicio!",
+        "author": "Josemaasa"
+      },
+      {
+        "quote": "Servicio muy rápido y atento. El bocadillo que probé estaba muy rico.",
+        "author": "Antonio R."
+      }
+    ],
+    "source": "Opiniones de clientes en Google",
+    "cta": "Deja tu opinión en Google",
+    "url": "https://g.page/r/CUzoQMk4ijh9EAE/review"
   }
 }
