@@ -1,21 +1,87 @@
 ---
+import siteContent from "../data/siteContent.json";
+
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Bar Restaurante Camarena en Ontinyent: esmorzars de toda la vida, menú diario, carnes, pescados y arroces. Raciones para llevar al mediodía.",
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const { footer, timetable } = siteContent;
+
+const dayMap = {
+  LUNES: "Monday",
+  MARTES: "Tuesday",
+  "MIÉRCOLES": "Wednesday",
+  JUEVES: "Thursday",
+  VIERNES: "Friday",
+  "SÁBADO": "Saturday",
+  DOMINGO: "Sunday",
+};
+
+const openingHours = timetable.ticket.schedule.flatMap(({ day, hours }) => {
+  const match = hours.match(/(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})/);
+  if (!match) return [];
+  return [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: dayMap[day as keyof typeof dayMap],
+      opens: match[1],
+      closes: match[2],
+    },
+  ];
+});
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: "Bar Restaurante Camarena",
+  description,
+  url: Astro.site?.toString(),
+  telephone: "+34" + footer.contact.phone.replace(/\s/g, ""),
+  servesCuisine: ["Española", "Mediterránea"],
+  priceRange: "€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "C/ Músico Enrique Casanova, 8",
+    addressLocality: "Ontinyent",
+    addressRegion: "Valencia",
+    postalCode: "46870",
+    addressCountry: "ES",
+  },
+  openingHoursSpecification: openingHours,
+  hasMenu: new URL("/carta", Astro.site).toString(),
+  sameAs: [footer.social.facebook.url],
+};
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="Bar Restaurante Camarena" content="Bar Restaurante Camarena" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#fff0e9" />
+
+    <meta property="og:type" content="restaurant.restaurant" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Bar Restaurante Camarena" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <slot />
