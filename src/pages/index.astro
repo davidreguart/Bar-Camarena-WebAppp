@@ -35,7 +35,7 @@ const dailyMenuSchema = {
         {
           "@type": "MenuItem",
           name: "Ración individual para llevar",
-          description: menu.takeaway.description,
+          description: `${menu.takeaway.description} ${menu.takeaway.howToOrder}`,
           offers: {
             "@type": "Offer",
             price: menu.takeaway.priceValue,

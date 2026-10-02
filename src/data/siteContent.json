@@ -263,7 +263,8 @@
       "price": "5 €",
       "priceValue": "5",
       "description": "Cada día tenemos raciones individuales para que te lleves la comida a casa o al trabajo.",
-      "priceNote": "5 € cada ración"
+      "priceNote": "5 € cada ración",
+      "howToOrder": "Resérvalas llamando por teléfono o pasando por el local, a cualquier hora en que estemos abiertos."
     }
   }
 }

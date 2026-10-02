@@ -72,6 +72,15 @@ const daysOfWeekList = [
       <p class="text-5xl font-bold text-rojo my-2">{menu.takeaway.price}</p>
       <p class="text-sm font-medium mb-2">{menu.takeaway.priceNote}</p>
       <p class="text-lg">{menu.takeaway.description}</p>
+      <p class="text-base mt-2">
+        {menu.takeaway.howToOrder}
+        <a
+          href={`tel:+34${content.footer.contact.phone.replace(/\s/g, "")}`}
+          class="font-bold underline"
+        >
+          {content.footer.contact.phone}
+        </a>
+      </p>
     </div>
   </div>
 
