@@ -1,0 +1,38 @@
+---
+import content from "../../data/siteContent.json";
+
+const { reviews } = content;
+---
+
+<section id="opiniones" class="w-11/12 md:w-3/4 m-auto">
+  <h2 class="text-4xl text-negro font-bold text-center mb-10">
+    {reviews.title}
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-4xl mx-auto">
+    {
+      reviews.items.map((review) => (
+        <figure class="text-center">
+          <blockquote class="text-negro/80 text-lg leading-relaxed">
+            &ldquo;{review.quote}&rdquo;
+          </blockquote>
+          <figcaption class="mt-3 text-xs uppercase tracking-widest text-negro/70">
+            {review.author}
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+
+  <p class="mt-10 text-center text-sm text-negro/70">{reviews.source}</p>
+  <p class="mt-3 text-center">
+    <a
+      href={reviews.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block rounded-full border border-negro/30 px-5 py-2 text-sm font-medium text-negro hover:bg-negro hover:text-blanco transition-colors"
+    >
+      {reviews.cta}
+    </a>
+  </p>
+</section>
