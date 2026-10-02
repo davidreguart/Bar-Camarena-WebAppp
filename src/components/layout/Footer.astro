@@ -29,11 +29,11 @@ const { brand, contact, social, map, copyright, credits } = footer;
       </h3>
       <div class="flex flex-col gap-3">
         <div class="flex items-start gap-3">
-          <img src={contact.icons.location} alt="Location" class="w-5 h-5 mt-1" />
+          <img src={contact.icons.location} alt="" class="w-5 h-5 mt-1" />
           <p class="flex-1 text-left">{contact.address}</p>
         </div>
         <div class="flex items-center gap-3">
-          <img src={contact.icons.phone} alt="Phone" class="w-5 h-5" />
+          <img src={contact.icons.phone} alt="" class="w-5 h-5" />
           <p class="flex-1 text-left">{contact.phone}</p>
         </div>
       </div>
@@ -47,6 +47,8 @@ const { brand, contact, social, map, copyright, credits } = footer;
       <div>
         <a
           href={social.facebook.url}
+          target="_blank"
+          rel="noopener noreferrer"
           class="flex items-center gap-2 hover:text-azul transition-colors"
         >
           <img src={social.facebook.icon} alt="Facebook" class="w-5 h-5" />
