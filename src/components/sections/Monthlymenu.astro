@@ -1,5 +1,6 @@
 ---
 // Importa el JSON
+import content from "../../data/siteContent.json";
 import dishes from "../../../data/dishes.json";
 import {
   getCurrentDay,
@@ -9,6 +10,8 @@ import {
   getDaysInCurrentMonth,
   getTargetMenuDate,
 } from "../../utils/dateUtils";
+
+const { menu } = content;
 
 // Date logic extracted to utils
 const currentDay = getCurrentDay();
@@ -54,6 +57,32 @@ const daysOfWeekList = [
     este mes, son distintos todos los días y puedes venir a probarlos a nuestro
     local o recogerlos para llevar.
   </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    <div class="bg-blanco border-2 border-negro rounded-2xl p-6 text-center">
+      <h3 class="text-2xl font-bold text-negro">{menu.daily.title}</h3>
+      <p class="text-5xl font-bold text-rojo my-2">{menu.daily.price}</p>
+      <p class="text-sm font-medium mb-2">{menu.daily.days}</p>
+      <ul class="text-lg">
+        {menu.daily.includes.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="bg-amarillo border-2 border-negro rounded-2xl p-6 text-center">
+      <h3 class="text-2xl font-bold text-negro">{menu.takeaway.title}</h3>
+      <p class="text-5xl font-bold text-rojo my-2">{menu.takeaway.price}</p>
+      <p class="text-sm font-medium mb-2">{menu.takeaway.priceNote}</p>
+      <p class="text-lg">{menu.takeaway.description}</p>
+      <p class="text-base mt-2">
+        {menu.takeaway.howToOrder}
+        <a
+          href={`tel:+34${content.footer.contact.phone.replace(/\s/g, "")}`}
+          class="font-bold underline"
+        >
+          {content.footer.contact.phone}
+        </a>
+      </p>
+    </div>
+  </div>
 
   <!-- Slider en móvil, cuadrícula de 7 columnas en escritorio -->
   <div
