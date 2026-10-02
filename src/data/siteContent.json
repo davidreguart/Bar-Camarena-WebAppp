@@ -21,7 +21,11 @@
         "text": "Y por si eres una persona ocupada, llévate nuestras raciones de mediodía"
       }
     ],
-    "intro": "Bar Restaurante Camarena, en la calle Músico Enrique Casanova, 8 de Ontinyent, sirve desayunos y esmorzars de lunes a sábado desde las 8:30 y menú del día de lunes a viernes por 14 €: primer plato, segundo plato, postre y bebida."
+    "facts": [
+      "C/ Músico Enrique Casanova, 8 · Ontinyent",
+      "Menú del día 14 €",
+      "Lunes a sábado desde las 8:30"
+    ]
   },
   "footer": {
     "brand": {
@@ -256,7 +260,9 @@
         "Segundo plato",
         "Postre",
         "Bebida"
-      ]
+      ],
+      "summary": "Primer plato, segundo plato, postre y bebida",
+      "label": "Lunes a viernes"
     },
     "takeaway": {
       "title": "Para llevar",
@@ -264,7 +270,9 @@
       "priceValue": "5",
       "description": "Cada día tenemos raciones individuales para que te lleves la comida a casa o al trabajo.",
       "priceNote": "5 € cada ración",
-      "howToOrder": "Resérvalas llamando por teléfono o pasando por el local, a cualquier hora en que estemos abiertos."
+      "howToOrder": "Resérvalas llamando por teléfono o pasando por el local, a cualquier hora en que estemos abiertos.",
+      "summary": "Raciones individuales cada día",
+      "reserve": "Reserva por teléfono o en el local"
     }
   }
 }
