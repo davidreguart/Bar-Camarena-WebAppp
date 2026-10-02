@@ -7,9 +7,49 @@ import TimeTable from "../components/sections/TimeTable.astro";
 
 import Divider from "../components/ui/Divider.astro";
 import Footer from "../components/layout/Footer.astro";
+import siteContent from "../data/siteContent.json";
+
+const { menu } = siteContent;
+
+const dailyMenuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "@id": new URL("/#menu-del-dia", Astro.site).toString(),
+  name: "Menú del día",
+  inLanguage: "es-ES",
+  hasMenuSection: [
+    {
+      "@type": "MenuSection",
+      name: menu.daily.title,
+      hasMenuItem: [
+        {
+          "@type": "MenuItem",
+          name: "Menú del día",
+          description: `${menu.daily.days}. Incluye: ${menu.daily.includes.join(", ").toLowerCase()}.`,
+          offers: {
+            "@type": "Offer",
+            price: menu.daily.priceValue,
+            priceCurrency: "EUR",
+          },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Ración individual para llevar",
+          description: menu.takeaway.description,
+          offers: {
+            "@type": "Offer",
+            price: menu.takeaway.priceValue,
+            priceCurrency: "EUR",
+          },
+        },
+      ],
+    },
+  ],
+};
 ---
 
 <Layout title="Bar Restaurante Camarena · Almuerzos y menú diario en Ontinyent">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(dailyMenuSchema)} />
   <header>
     <Navbar />
   </header>
