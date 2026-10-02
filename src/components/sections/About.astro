@@ -9,16 +9,12 @@ const { about } = content;
   class="w-11/12 md:w-3/4 mx-auto rounded-3xl bg-rojo text-white mt-24 md:mt-28 py-10"
 >
   <div class="mx-auto text-center">
-    <!-- Desktop Title -->
-    <h1
-      class="hidden md:block text-salmon text-3xl md:text-7xl font-bold mb-8"
-      set:html={about.desktopTitle}
-    />
-    <!-- Mobile Title -->
-    <h1
-      class="block md:hidden text-salmon text-4xl font-bold mb-8"
-      set:html={about.mobileTitle}
-    />
+    <h1 class="text-salmon text-4xl md:text-7xl font-bold mb-8">
+      <span set:html={about.mobileTitle} />
+      <span class="block text-xl md:text-3xl font-normal mt-4">
+        Bar Restaurante Camarena en Ontinyent
+      </span>
+    </h1>
 
     <p
       class="text-salmon text-base md:text-xl mx-auto font-light w-3/4 md:w-3/5 mb-8"

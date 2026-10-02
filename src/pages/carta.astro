@@ -6,12 +6,48 @@ import PromoModal from "../components/modals/PromoModal.astro";
 import siteContent from "../data/siteContent.json";
 
 const { carta } = siteContent;
+
+const toPrice = (value: string) => value.replace("€", "").replace(",", ".").replace("'", ".");
+
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "@id": new URL("/carta/#menu", Astro.site).toString(),
+  name: "Carta de bocadillos y almuerzos",
+  url: new URL("/carta/", Astro.site).toString(),
+  inLanguage: "es-ES",
+  hasMenuSection: carta.categories.map((category) => ({
+    "@type": "MenuSection",
+    name: category.name,
+    description: category.description,
+    hasMenuItem: category.items.map((item) => ({
+      "@type": "MenuItem",
+      name: item.name,
+      description: item.ingredients,
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Medio",
+          price: toPrice(item.priceHalf),
+          priceCurrency: "EUR",
+        },
+        {
+          "@type": "Offer",
+          name: "Entero",
+          price: toPrice(item.priceWhole),
+          priceCurrency: "EUR",
+        },
+      ],
+    })),
+  })),
+};
 ---
 
 <Layout
   title="Carta de bocadillos y almuerzos · Bar Restaurante Camarena"
   description="Carta del Bar Restaurante Camarena en Ontinyent: esmorzar popular, bocadillos de toda la vida con precios de medio y entero."
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(menuSchema)} />
   <Navbar />
   <PromoModal />
   

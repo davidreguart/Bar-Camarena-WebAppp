@@ -37,26 +37,49 @@ const openingHours = timetable.ticket.schedule.flatMap(({ day, hours }) => {
   ];
 });
 
+const restaurantId = new URL("/#restaurant", Astro.site).toString();
+const imageUrl = new URL("/img/fachada.jpg", Astro.site).toString();
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "Bar Restaurante Camarena",
-  description,
-  url: Astro.site?.toString(),
-  telephone: "+34" + footer.contact.phone.replace(/\s/g, ""),
-  servesCuisine: ["Española", "Mediterránea"],
-  priceRange: "€",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "C/ Músico Enrique Casanova, 8",
-    addressLocality: "Ontinyent",
-    addressRegion: "Valencia",
-    postalCode: "46870",
-    addressCountry: "ES",
-  },
-  openingHoursSpecification: openingHours,
-  hasMenu: new URL("/carta", Astro.site).toString(),
-  sameAs: [footer.social.facebook.url],
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "@id": restaurantId,
+      name: "Bar Restaurante Camarena",
+      description,
+      url: new URL("/", Astro.site).toString(),
+      telephone: "+34" + footer.contact.phone.replace(/\s/g, ""),
+      image: [imageUrl],
+      servesCuisine: ["Española", "Mediterránea"],
+      priceRange: "€",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "C/ Músico Enrique Casanova, 8",
+        addressLocality: "Ontinyent",
+        addressRegion: "Valencia",
+        postalCode: "46870",
+        addressCountry: "ES",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 38.8207913280161,
+        longitude: -0.6023554341826595,
+      },
+      openingHoursSpecification: openingHours,
+      hasMenu: new URL("/carta/", Astro.site).toString(),
+      hasMap: footer.map.url,
+      sameAs: [footer.social.facebook.url],
+    },
+    {
+      "@type": "WebSite",
+      "@id": new URL("/#website", Astro.site).toString(),
+      url: new URL("/", Astro.site).toString(),
+      name: "Bar Restaurante Camarena",
+      inLanguage: "es-ES",
+      publisher: { "@id": restaurantId },
+    },
+  ],
 };
 ---
 
@@ -64,7 +87,7 @@ const jsonLd = {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta name="generator" content={Astro.generator} />
@@ -79,12 +102,25 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fachada del Bar Restaurante Camarena en Ontinyent" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={imageUrl} />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <slot name="head" />
   </head>
   <body>
     <slot />
+    <a
+      href={`tel:+34${footer.contact.phone.replace(/\s/g, "")}`}
+      class="md:hidden fixed bottom-4 right-4 z-40 flex items-center justify-center min-h-12 px-6 rounded-full bg-rojo text-white font-bold shadow-lg"
+      aria-label={`Llamar al ${footer.contact.phone}`}
+    >
+      Llamar
+    </a>
   </body>
 </html>
 
