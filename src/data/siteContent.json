@@ -22,7 +22,7 @@
       }
     ],
     "facts": [
-      "C/ Músico Enrique Casanova, 8 · Ontinyent",
+      "Carrer del Músic Enric Casanova, 8 · Ontinyent",
       "Menú del día 14 €",
       "Lunes a sábado desde las 8:30"
     ]
@@ -36,7 +36,7 @@
     },
     "contact": {
       "title": "CONTACTO",
-      "address": "C/ Músico Enrique Casanova, 8, Ontinyent (Valencia) - 46870",
+      "address": "Carrer del Músic Enric Casanova, 8, Ontinyent (Valencia) - 46870",
       "phone": "96 238 42 40",
       "icons": {
         "location": "/img/location.svg",
@@ -76,7 +76,7 @@
     },
     "ticket": {
       "title": "BAR CAMARENA",
-      "address": "C/ Músico Enrique Casanova, 8\nOntinyent, Valencia",
+      "address": "Carrer del Músic Enric Casanova, 8\nOntinyent, Valencia",
       "subtitle": "TICKET DE HORARIO",
       "schedule": [
         {
@@ -277,7 +277,7 @@
       "summary": "Raciones individuales cada día",
       "reserve": "Reserva por teléfono o en el local"
     },
-    "fact": "Bar Restaurante Camarena, en la calle Músico Enrique Casanova, 8 de Ontinyent, sirve desayunos y esmorzars de lunes a sábado desde las 8:30 y menú del día de lunes a viernes por 14 €: primer plato, segundo plato, postre y bebida. También tienes raciones individuales para llevar a 5 €."
+    "fact": "Bar Restaurante Camarena, en el Carrer del Músic Enric Casanova, 8 de Ontinyent, sirve desayunos y esmorzars de lunes a sábado desde las 8:30 y menú del día de lunes a viernes por 14 €: primer plato, segundo plato, postre y bebida. También tienes raciones individuales para llevar a 5 €."
   },
   "reviews": {
     "title": "Lo que dicen de nosotros",
