@@ -23,6 +23,7 @@ const monthLabel = targetDate.toLocaleDateString("es-ES", {
   month: "long",
   year: "numeric",
 });
+const phoneHref = `tel:+34${content.footer.contact.phone.replace(/\s/g, "")}`;
 const pad = (n: number) => String(n).padStart(2, "0");
 const isoDate = (day: number) =>
   `${targetDate.getFullYear()}-${pad(targetDate.getMonth() + 1)}-${pad(day)}`;
@@ -48,38 +49,37 @@ const daysOfWeekList = [
 ---
 
 <section id="menu" class="w-11/12 md:w-3/4 m-auto">
-  <h2 class="text-4xl text-negro font-bold text-center mb-8">
+  <p class="text-center text-sm uppercase tracking-[0.25em] text-rojo font-bold mb-2">
+    {monthLabel}
+  </p>
+  <h2 class="text-4xl text-negro font-bold text-center mb-6">
     Menú del día en Ontinyent
-    <span class="block text-rojo text-3xl mt-2 capitalize">{monthLabel}</span>
   </h2>
-  <p class="w-3/4 mx-auto text-lg text-center mb-8">
-    Aquí podrás encontrar los 4 platos que vamos a preparar para cada día de
-    este mes, son distintos todos los días y puedes venir a probarlos a nuestro
-    local o recogerlos para llevar.
+  <p class="max-w-xl mx-auto text-center text-negro/70 mb-8">
+    Cuatro platos distintos cada día. Pruébalos en el local o llévatelos.
   </p>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-    <div class="bg-blanco border-2 border-negro rounded-2xl p-6 text-center">
-      <h3 class="text-2xl font-bold text-negro">{menu.daily.title}</h3>
-      <p class="text-5xl font-bold text-rojo my-2">{menu.daily.price}</p>
-      <p class="text-sm font-medium mb-2">{menu.daily.days}</p>
-      <ul class="text-lg">
-        {menu.daily.includes.map((item) => <li>{item}</li>)}
-      </ul>
+  <div
+    class="max-w-2xl mx-auto mb-10 grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-negro/15 rounded-2xl bg-blanco border border-negro/15 text-center"
+  >
+    <div class="p-5">
+      <p class="text-xs uppercase tracking-widest text-negro/60">
+        {menu.daily.title} · {menu.daily.label}
+      </p>
+      <p class="text-3xl font-bold text-rojo my-1">{menu.daily.price}</p>
+      <p class="text-sm text-negro/70">{menu.daily.summary}</p>
     </div>
-    <div class="bg-amarillo border-2 border-negro rounded-2xl p-6 text-center">
-      <h3 class="text-2xl font-bold text-negro">{menu.takeaway.title}</h3>
-      <p class="text-5xl font-bold text-rojo my-2">{menu.takeaway.price}</p>
-      <p class="text-sm font-medium mb-2">{menu.takeaway.priceNote}</p>
-      <p class="text-lg">{menu.takeaway.description}</p>
-      <p class="text-base mt-2">
-        {menu.takeaway.howToOrder}
-        <a
-          href={`tel:+34${content.footer.contact.phone.replace(/\s/g, "")}`}
-          class="font-bold underline"
-        >
-          {content.footer.contact.phone}
-        </a>
+    <div class="p-5">
+      <p class="text-xs uppercase tracking-widest text-negro/60">
+        {menu.takeaway.title}
+      </p>
+      <p class="text-3xl font-bold text-rojo my-1">
+        {menu.takeaway.price}
+        <span class="text-base font-normal text-negro/60">/ ración</span>
+      </p>
+      <p class="text-sm text-negro/70">
+        {menu.takeaway.summary}.
+        <a href={phoneHref} class="block underline mt-0.5">{menu.takeaway.reserve}</a>
       </p>
     </div>
   </div>
@@ -140,6 +140,10 @@ const daysOfWeekList = [
       })
     }
   </div>
+
+  <p class="max-w-2xl mx-auto mt-8 text-center text-sm text-negro/60">
+    {menu.fact}
+  </p>
 </section>
 
 <script>

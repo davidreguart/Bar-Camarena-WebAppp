@@ -9,23 +9,32 @@ const { about } = content;
   class="w-11/12 md:w-3/4 mx-auto rounded-3xl bg-rojo text-white mt-24 md:mt-28 py-10"
 >
   <div class="mx-auto text-center">
-    <h1 class="text-salmon text-4xl md:text-7xl font-bold mb-8">
-      <span set:html={about.mobileTitle} />
-      <span class="block text-xl md:text-3xl font-normal mt-4">
-        Bar Restaurante Camarena en Ontinyent
+    <h1 class="text-salmon text-4xl md:text-7xl font-bold mb-6">
+      <span
+        class="block text-xs md:text-sm font-normal uppercase tracking-[0.25em] text-salmon/80 mb-3"
+      >
+        Bar Restaurante Camarena · Ontinyent
       </span>
+      <span set:html={about.mobileTitle} />
     </h1>
 
     <p
-      class="text-white text-base md:text-lg mx-auto w-3/4 md:w-3/5 mb-4"
-    >
-      {about.intro}
-    </p>
-    <p
-      class="text-salmon text-base md:text-xl mx-auto font-light w-3/4 md:w-3/5 mb-8"
+      class="text-salmon text-base md:text-xl mx-auto font-light w-3/4 md:w-3/5 mb-6"
     >
       {about.description}
     </p>
+
+    <ul
+      class="flex flex-wrap justify-center gap-2 w-11/12 md:w-3/4 mx-auto mb-10"
+    >
+      {
+        about.facts.map((fact) => (
+          <li class="rounded-full bg-white/15 px-4 py-1.5 text-sm text-white">
+            {fact}
+          </li>
+        ))
+      }
+    </ul>
 
     <div class="w-4/5 m-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-24">
       {
