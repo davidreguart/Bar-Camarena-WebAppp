@@ -7,6 +7,7 @@ import {
   getFirstDayWeekIndex,
   getCalendarSlots,
   getDaysInCurrentMonth,
+  getTargetMenuDate,
 } from "../../utils/dateUtils";
 
 // Date logic extracted to utils
@@ -14,6 +15,14 @@ const currentDay = getCurrentDay();
 const firstDayWeekIndex = getFirstDayWeekIndex();
 const daysInMonth = getDaysInCurrentMonth();
 const calendarSlots = getCalendarSlots(firstDayWeekIndex, daysInMonth);
+const targetDate = getTargetMenuDate();
+const monthLabel = targetDate.toLocaleDateString("es-ES", {
+  month: "long",
+  year: "numeric",
+});
+const pad = (n: number) => String(n).padStart(2, "0");
+const isoDate = (day: number) =>
+  `${targetDate.getFullYear()}-${pad(targetDate.getMonth() + 1)}-${pad(day)}`;
 
 const getDishesForDay = (dayIndex: number) => {
   if (dayIndex < firstDayWeekIndex) return null;
@@ -37,7 +46,8 @@ const daysOfWeekList = [
 
 <section id="menu" class="w-11/12 md:w-3/4 m-auto">
   <h2 class="text-4xl text-negro font-bold text-center mb-8">
-    Menú <span class="text-rojo">diario</span>
+    Menú del día en Ontinyent
+    <span class="block text-rojo text-3xl mt-2 capitalize">{monthLabel}</span>
   </h2>
   <p class="w-3/4 mx-auto text-lg text-center mb-8">
     Aquí podrás encontrar los 4 platos que vamos a preparar para cada día de
@@ -45,103 +55,56 @@ const daysOfWeekList = [
     local o recogerlos para llevar.
   </p>
 
-  <!-- Slider para móviles -->
+  <!-- Slider en móvil, cuadrícula de 7 columnas en escritorio -->
   <div
-    id="mobile-slider"
-    class="block md:hidden overflow-x-auto whitespace-nowrap scroll-smooth"
+    id="menu-calendar"
+    class="flex overflow-x-auto scroll-smooth md:grid md:grid-cols-7 md:gap-4 md:overflow-visible"
   >
     {
       calendarSlots.map((i) => {
         const data = getDishesForDay(i);
 
         if (!data) {
-          // Empty slot
           return (
-            <div class="inline-block text-center border-2 border-transparent rounded-xl p-4 w-52 m-2">
-              {/* Tarjeta vacía */}
-            </div>
+            <div
+              class="hidden md:block bg-blanco text-center border-2 border-negro rounded-xl p-2"
+              aria-hidden="true"
+            />
           );
         }
 
         const { day, dishes: dishesForDay, isTransparent } = data;
         const isToday = isDateToday(day);
-        
-        // Logic: 
-        // - If Today and Open -> bg-amarillo
-        // - If Closed (isTransparent) -> transparent-card (Red)
-        // - If Today and Closed -> transparent-card (Red) - Priority to Closed color as requested, or keep red. 
-        
-        let cardClass = "bg-blanco"; // Default
+
+        // Cerrado -> rojo translúcido (prioridad sobre "hoy"); hoy abierto -> amarillo
+        let cardClass = "bg-blanco";
         if (isTransparent) {
-             cardClass = "transparent-card"; // Closed/Red
+          cardClass = "transparent-card";
         } else if (isToday) {
-             cardClass = "bg-amarillo"; // Today Open
+          cardClass = "bg-amarillo";
         }
 
         const dayOfWeek = daysOfWeekList[i % 7];
 
         return (
           <div
-            id={`dayCard-mobile-${day}`}
+            id={`dayCard-${day}`}
             data-day={day}
             data-is-closed={isTransparent}
-            class={`day-card inline-block whitespace-normal align-top text-center border-2 border-negro rounded-xl p-4 w-52 m-2 ${cardClass}`}
+            class={`day-card shrink-0 w-52 m-2 md:w-auto md:m-0 text-center border-2 border-negro rounded-xl p-4 md:p-2 ${cardClass}`}
           >
-            <h3 class="text-xl font-bold mb-2">{day}</h3>
-            <p class="text-sm font-medium mb-1">{dayOfWeek}</p>
-            <hr class="w-4/5 h-[1px] mx-auto my-2 bg-negro border-0 rounded-full" />
-            <ul class="text-sm">
-              {dishesForDay.map((dish) => (
-                <li>{dish}</li>
-              ))}
-            </ul>
-          </div>
-        );
-      })
-    }
-  </div>
-
-  <!-- Diseño de cuadrícula para resoluciones mayores -->
-  <div class="hidden md:grid grid-cols-7 gap-4">
-    {
-      calendarSlots.map((i) => {
-        const data = getDishesForDay(i);
-
-        if (!data) {
-          return (
-            <div class="bg-blanco text-center border-2 border-negro rounded-xl p-2">
-              {/* Tarjeta vacía */}
-            </div>
-          );
-        }
-
-        const { day, dishes: dishesForDay, isTransparent } = data;
-        const isToday = isDateToday(day);
-        
-        let cardClass = "bg-blanco"; 
-        if (isTransparent) {
-             cardClass = "transparent-card"; 
-        } else if (isToday) {
-             cardClass = "bg-amarillo";
-        }
-
-        const dayOfWeek = daysOfWeekList[i % 7];
-
-        return (
-          <div
-            id={`dayCard-desktop-${day}`}
-            data-day={day}
-            data-is-closed={isTransparent}
-            class={`day-card text-center border-2 border-negro rounded-xl p-2 ${cardClass}`}
-          >
-            <h3 class="text-xl font-bold mb-2">
-              {dayOfWeek} {day}
-            </h3>
+            <p class="text-xl font-bold mb-2">
+              <time datetime={isoDate(day)}>
+                {dayOfWeek} {day}
+              </time>
+            </p>
             <hr class="w-4/5 h-[1.5px] mx-auto my-2 bg-negro border-0 rounded-full" />
-            <ul class="text-sm font-regular">
-              {dishesForDay.map((dish) => (
-                <li>{dish}</li>
-              ))}
+            <ul class="text-sm">
+              {isTransparent ? (
+                <li class="font-bold">Cerrado</li>
+              ) : (
+                dishesForDay.map((dish) => <li>{dish}</li>)
+              )}
             </ul>
           </div>
         );
@@ -175,9 +138,9 @@ const daysOfWeekList = [
     });
 
     // Scrolling logic for mobile
-    const mobileDayCardId = `dayCard-mobile-${currentDay}`;
+    const mobileDayCardId = `dayCard-${currentDay}`;
     const dayCard = document.getElementById(mobileDayCardId);
-    const slider = document.getElementById("mobile-slider");
+    const slider = document.getElementById("menu-calendar");
 
     if (dayCard && slider) {
       const observer = new IntersectionObserver((entries) => {

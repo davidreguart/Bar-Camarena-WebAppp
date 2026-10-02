@@ -6,18 +6,18 @@
     "cards": [
       {
         "icon": "/img/croissant.svg",
-        "alt": "Croissant icon",
+        "alt": "Icono de un croissant",
         "text": "Tanto si eres de bollería y cafetito o d'esmorçaret de toda la vida. Tenemos lo que más te apetezca"
       },
       {
         "icon": "/img/fideua.svg",
-        "alt": "Fideua icon",
+        "alt": "Icono de una fideuà",
         "text": "Carnes, pescados, arroces, primeros, segundos, postres,... ¿qué más se puede pedir?",
         "extraClasses": "mt-2 md:-mt-2"
       },
       {
         "icon": "/img/tuppers.svg",
-        "alt": "Tupper Icon",
+        "alt": "Icono de un tupper para llevar",
         "text": "Y por si eres una persona ocupada, llévate nuestras raciones de mediodía"
       }
     ]
@@ -25,7 +25,7 @@
   "footer": {
     "brand": {
       "logo": "/img/logo_camarena.svg",
-      "alt": "Camarena Logo",
+      "alt": "Logo del Bar Restaurante Camarena",
       "name": "CAMARENA",
       "description": "El típico bar de toda la vida, donde la calidad y el trato familiar son nuestra seña de identidad."
     },
@@ -47,7 +47,7 @@
       }
     },
     "map": {
-      "image": "/img/map.png",
+      "image": "/img/map.webp",
       "buttonText": "Ver en Mapa",
       "url": "https://maps.google.com/?q=Bar+Restaurante+Camarena+Ontinyent"
     },
