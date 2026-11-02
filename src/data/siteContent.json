@@ -2,12 +2,12 @@
   "about": {
     "desktopTitle": "El típico restaurante <br /> de <span class=\"text-amarillo\">toda la vida</span>",
     "mobileTitle": "El típico bar de <br /> <span class=\"text-amarillo text-5xl\">toda la vida</span>",
-    "description": "Así es, somos lo que siempre buscas en Google como, \"bar de toda la vida\". Y estamos para ofrecerte los mejores desayunos y menús de medio día que podrás encontrar.",
+    "description": "Así es, somos lo que siempre buscas en Google como \"bar de toda la vida\". Y estamos para ofrecerte los mejores desayunos y menús de mediodía que podrás encontrar.",
     "cards": [
       {
         "icon": "/img/croissant.svg",
         "alt": "Icono de un croissant",
-        "text": "Tanto si eres de bollería y cafetito o d'esmorçaret de toda la vida. Tenemos lo que más te apetezca"
+        "text": "Tanto si eres de bollería y cafetito o d'esmorzaret de toda la vida. Tenemos lo que más te apetezca"
       },
       {
         "icon": "/img/fideua.svg",
@@ -23,8 +23,8 @@
     ],
     "facts": [
       "Carrer del Músic Enric Casanova, 8 · Ontinyent",
-      "Menú del día 14 €",
-      "Lunes a sábado desde las 8:30"
+      "Menú del día 14 € (lunes a viernes)",
+      "Abierto de lunes a sábado desde las 8:30"
     ]
   },
   "footer": {
@@ -109,23 +109,23 @@
         }
       ],
       "footer": "¡GRACIAS!",
-      "subfooter": "Esperamos verle pronto"
+      "subfooter": "Esperamos verte pronto"
     }
   },
   "carta": {
     "title": "Nuestra Carta",
     "subtitle": "Sabores tradicionales hechos al momento",
     "popularLunch": {
-      "halfPrice": "7'50€",
-      "wholePrice": "8'50",
+      "halfPrice": "7,50 €",
+      "wholePrice": "8,50 €",
       "includes": "incluye bocata o medio bocata, una bebida, aceitunas, cacahuetes y servicio de café",
-      "noCoffeeDiscount": "Si no se quiere café se restará 1€ al precio del almuerzo."
+      "noCoffeeDiscount": "Si no se quiere café se restará 1 € al precio del almuerzo."
     },
     "categories": [
       {
         "name": "Esmorzar Popular (Bocadillos)",
         "description": "El auténtico esmorzaret con pan recién horneado.",
-        "extraInfo": "Ingrediente extra 0,50€",
+        "extraInfo": "Ingrediente extra 0,50 €",
         "icon": "/img/croissant.svg",
         "items": [
           {
@@ -136,7 +136,7 @@
           },
           {
             "name": "El Macerado",
-            "ingredients": "Bacalao o Mojama o Salmón con queso fresco y tomate",
+            "ingredients": "Bacalao o mojama o salmón con queso fresco y tomate",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },
@@ -148,13 +148,13 @@
           },
           {
             "name": "El de Pechuga",
-            "ingredients": "Pechuga pollo, cebolla y mayonesa",
+            "ingredients": "Pechuga de pollo, cebolla y mayonesa",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },
           {
             "name": "El de Pechuga especial",
-            "ingredients": "Pechuga pollo, bacon, queso, lechuga, mayonesa",
+            "ingredients": "Pechuga de pollo, bacon, queso, lechuga, mayonesa",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },
@@ -238,7 +238,7 @@
           },
           {
             "name": "Serranito",
-            "ingredients": "Lomo, pimiento verde, tomate a rodajas y jamón plancha",
+            "ingredients": "Lomo, pimiento verde, tomate en rodajas y jamón plancha",
             "priceHalf": "3€",
             "priceWhole": "6€"
           },

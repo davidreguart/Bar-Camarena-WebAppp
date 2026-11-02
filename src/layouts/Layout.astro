@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title,
-  description = "Bar Restaurante Camarena en Ontinyent: esmorzars de toda la vida, menú diario, carnes, pescados y arroces. Raciones para llevar al mediodía.",
+  description = "Bar en Ontinyent de toda la vida: desayunos y esmorzars, menú del día de lunes a viernes por 14 € y raciones para llevar a 5 €.",
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
@@ -52,7 +52,7 @@ const jsonLd = {
       telephone: "+34" + footer.contact.phone.replace(/\s/g, ""),
       image: [imageUrl],
       servesCuisine: ["Española", "Mediterránea"],
-      priceRange: "€",
+      priceRange: "10-20 EUR",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Carrer del Músic Enric Casanova, 8",
@@ -67,7 +67,10 @@ const jsonLd = {
         longitude: -0.6023554341826595,
       },
       openingHoursSpecification: openingHours,
-      hasMenu: new URL("/carta/", Astro.site).toString(),
+      hasMenu: [
+        new URL("/carta/", Astro.site).toString(),
+        new URL("/#menu", Astro.site).toString(),
+      ],
       hasMap: footer.map.url,
       sameAs: [footer.social.facebook.url, footer.social.google.url],
     },
@@ -88,7 +91,10 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
