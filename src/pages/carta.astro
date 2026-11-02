@@ -7,7 +7,36 @@ import siteContent from "../data/siteContent.json";
 
 const { carta } = siteContent;
 
-const toPrice = (value: string) => value.replace("€", "").replace(",", ".").replace("'", ".");
+const toPrice = (value: string) =>
+  value.replace("€", "").replace(",", ".").replace("'", ".").trim();
+
+const popularSection = {
+  "@type": "MenuSection",
+  name: "Almuerzo popular",
+  description: carta.popularLunch.includes,
+  hasMenuItem: [
+    {
+      "@type": "MenuItem",
+      name: "Almuerzo popular (medio bocadillo)",
+      description: carta.popularLunch.includes,
+      offers: {
+        "@type": "Offer",
+        price: toPrice(carta.popularLunch.halfPrice),
+        priceCurrency: "EUR",
+      },
+    },
+    {
+      "@type": "MenuItem",
+      name: "Almuerzo popular (bocadillo entero)",
+      description: carta.popularLunch.includes,
+      offers: {
+        "@type": "Offer",
+        price: toPrice(carta.popularLunch.wholePrice),
+        priceCurrency: "EUR",
+      },
+    },
+  ],
+};
 
 const menuSchema = {
   "@context": "https://schema.org",
@@ -16,7 +45,7 @@ const menuSchema = {
   name: "Carta de bocadillos y almuerzos",
   url: new URL("/carta/", Astro.site).toString(),
   inLanguage: "es-ES",
-  hasMenuSection: carta.categories.map((category) => ({
+  hasMenuSection: [popularSection, ...carta.categories.map((category) => ({
     "@type": "MenuSection",
     name: category.name,
     description: category.description,
@@ -39,12 +68,12 @@ const menuSchema = {
         },
       ],
     })),
-  })),
+  }))],
 };
 ---
 
 <Layout
-  title="Carta de bocadillos y almuerzos · Bar Restaurante Camarena"
+  title="Carta de bocadillos y almuerzos | Bar Camarena Ontinyent"
   description="Carta del Bar Restaurante Camarena en Ontinyent: esmorzar popular, bocadillos de toda la vida con precios de medio y entero."
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(menuSchema)} />
@@ -79,7 +108,7 @@ const menuSchema = {
               </div>
               <div class="bg-salmon-dark/20 px-6 py-3 rounded-2xl text-center border border-salmon-dark/30">
                 <span class="block text-xs text-gray-400 font-bold uppercase tracking-wider">Entero</span>
-                <span class="text-2xl font-bold text-rojo">{carta.popularLunch.wholePrice}€</span>
+                <span class="text-2xl font-bold text-rojo">{carta.popularLunch.wholePrice}</span>
               </div>
             </div>
           </div>

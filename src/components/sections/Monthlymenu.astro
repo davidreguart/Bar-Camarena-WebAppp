@@ -55,8 +55,8 @@ const daysOfWeekList = [
   <h2 class="text-4xl text-negro font-bold text-center mb-6">
     Menú del día en Ontinyent
   </h2>
-  <p class="max-w-xl mx-auto text-center text-negro/70 mb-8">
-    Cuatro platos distintos cada día. Pruébalos en el local o llévatelos.
+  <p class="max-w-2xl mx-auto text-center text-negro/80 mb-8">
+    {menu.fact}
   </p>
 
   <div
@@ -105,15 +105,19 @@ const daysOfWeekList = [
         const { day, dishes: dishesForDay, isTransparent } = data;
         const isToday = isDateToday(day);
 
-        // Cerrado -> rojo translúcido (prioridad sobre "hoy"); hoy abierto -> amarillo
+        const dayOfWeek = daysOfWeekList[i % 7];
+        // Sábado sin platos: el bar abre pero no hay menú del día (no está cerrado)
+        const isSaturdayNoMenu = isTransparent && dayOfWeek === "Sábado";
+
+        // Cerrado -> rojo translúcido; sábado sin menú -> blanco atenuado; hoy abierto -> amarillo
         let cardClass = "bg-blanco";
-        if (isTransparent) {
+        if (isSaturdayNoMenu) {
+          cardClass = "bg-blanco opacity-80";
+        } else if (isTransparent) {
           cardClass = "transparent-card";
         } else if (isToday) {
           cardClass = "bg-amarillo";
         }
-
-        const dayOfWeek = daysOfWeekList[i % 7];
 
         return (
           <div
@@ -130,7 +134,7 @@ const daysOfWeekList = [
             <hr class="w-4/5 h-[1.5px] mx-auto my-2 bg-negro border-0 rounded-full" />
             <ul class="text-sm">
               {isTransparent ? (
-                <li class="font-bold">Cerrado</li>
+                <li class="font-bold">{isSaturdayNoMenu ? "Sin menú del día" : "Cerrado"}</li>
               ) : (
                 dishesForDay.map((dish) => <li>{dish}</li>)
               )}
@@ -141,9 +145,6 @@ const daysOfWeekList = [
     }
   </div>
 
-  <p class="max-w-2xl mx-auto mt-8 text-center text-sm text-negro/60">
-    {menu.fact}
-  </p>
 </section>
 
 <script>

@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<Layout
+  title="Página no encontrada | Bar Camarena Ontinyent"
+  description="La página que buscas no existe. Vuelve al inicio o consulta la carta del Bar Restaurante Camarena en Ontinyent."
+>
+  <meta slot="head" name="robots" content="noindex" />
+  <Navbar />
+
+  <main class="pt-40 pb-20 w-11/12 md:w-3/4 mx-auto min-h-[70vh] text-center">
+    <p class="text-sm uppercase tracking-[0.25em] text-rojo font-bold mb-2">
+      Error 404
+    </p>
+    <h1 class="text-4xl md:text-5xl text-negro font-bold mb-4">
+      Esta página no existe
+    </h1>
+    <p class="max-w-xl mx-auto text-negro/80 mb-8">
+      Puede que el enlace esté mal o que la página se haya movido. Desde aquí
+      puedes volver a lo importante.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a
+        href="/"
+        class="px-6 py-3 bg-rojo text-white rounded-xl hover:bg-negro transition-colors"
+      >
+        Ir al inicio
+      </a>
+      <a
+        href="/carta/"
+        class="px-6 py-3 border border-negro/30 text-negro rounded-xl hover:bg-negro hover:text-blanco transition-colors"
+      >
+        Ver la carta
+      </a>
+    </div>
+  </main>
+
+  <footer class="py-4 text-center text-sm text-negro">
+    <Footer />
+  </footer>
+</Layout>
