@@ -1,0 +1,3 @@
+# Variantes con www: un solo salto directo al dominio principal
+http://www.barcamarena.com/*   https://barcamarena.com/:splat   301!
+https://www.barcamarena.com/*  https://barcamarena.com/:splat   301!
